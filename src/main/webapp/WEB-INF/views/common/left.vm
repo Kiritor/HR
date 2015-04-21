@@ -38,7 +38,7 @@
 
         <li class="start active ">
 
-            <a href="index.html">
+            <a href="${basePath}/index">
 
                 <i class="icon-home"></i> 
 
@@ -63,86 +63,38 @@
             </a>
 
             <ul class="sub-menu">
+			   <li>
 
-                <li>
+                    <a href="/hr/ou/list" style="font-family:'微软雅黑'">
 
-                    <a href="layout_horizontal_sidebar_menu.html">
-
-							Horzontal &amp; Sidebar Menu</a>
-
-                </li>
-
-                <li>
-
-                    <a href="layout_horizontal_menu1.html">
-
-							Horzontal Menu 1</a>
+							基本信息</a>
 
                 </li>
 
                 <li>
 
-                    <a href="layout_horizontal_menu2.html">
+                    <a href="layout_horizontal_sidebar_menu.html" style="font-family:'微软雅黑'">
 
-							Horzontal Menu 2</a>
-
-                </li>
-
-                <li>
-
-                    <a href="layout_promo.html">
-
-							Promo Page</a>
+							组织分类管理</a>
 
                 </li>
 
                 <li>
 
-                    <a href="layout_email.html">
+                    <a href="layout_horizontal_menu1.html" style="font-family:'微软雅黑'">
 
-							Email Templates</a>
-
-                </li>
-
-                <li>
-
-                    <a href="layout_ajax.html">
-
-							Content Loading via Ajax</a>
+							组织类型管理</a>
 
                 </li>
 
                 <li>
 
-                    <a href="layout_sidebar_closed.html">
+                    <a href="layout_horizontal_menu2.html" style="font-family:'微软雅黑'">
 
-							Sidebar Closed Page</a>
-
-                </li>
-
-                <li>
-
-                    <a href="layout_blank_page.html">
-
-							Blank Page</a>
+							地址维护</a>
 
                 </li>
 
-                <li>
-
-                    <a href="layout_boxed_page.html">
-
-							Boxed Page</a>
-
-                </li>
-
-                <li>
-
-                    <a href="layout_boxed_not_responsive.html">
-
-							Non-Responsive Boxed Layout</a>
-
-                </li>
 
             </ul>
 

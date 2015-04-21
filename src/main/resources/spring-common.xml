@@ -23,7 +23,7 @@
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
-				<prop key="hibernate.current_session_context_class">thread</prop>
+<!-- 				<prop key="hibernate.current_session_context_class">thread</prop> -->
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
 			</props>
 		</property>

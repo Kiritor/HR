@@ -5,6 +5,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.servlet.ModelAndView;
 
+import com.lcore.core.utils.GlobalConfigHolder;
+
 /**
  * 视图model
  * @author LCore
@@ -21,6 +23,7 @@ public class ModelView {
 	protected ModelAndView createSingleView(String fileName,
 			HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView view = new ModelAndView();
+		view.addObject("basePath",GlobalConfigHolder.getProperty("basePath"));
 		view.setViewName(fileName);
 		return view;
 	}
@@ -43,6 +46,8 @@ public class ModelView {
 		view.addObject("header_path", "common/header.vm");
 		view.addObject("left_path", "common/left.vm");
 		view.addObject("content_path", fileName + ".vm");
+		String path = GlobalConfigHolder.getProperty("basePath");
+		view.addObject("basePath",GlobalConfigHolder.getProperty("basePath"));
 		return view;
 	}
 

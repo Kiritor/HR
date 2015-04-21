@@ -72,7 +72,7 @@
 
 		<!-- BEGIN LOGIN FORM -->
 
-		<form class="form-vertical login-form" action="index.html">
+		<form class="form-vertical login-form" action="/hr/login" method="post">
 
 			<h3 class="form-title">用户登录</h3>
 
@@ -96,7 +96,7 @@
 
 						<i class="icon-user"></i>
 
-						<input class="m-wrap placeholder-no-fix" type="text" placeholder="Username" name="username"/>
+						<input class="m-wrap placeholder-no-fix" type="text" placeholder="Username" name="userName"/>
 
 					</div>
 
@@ -154,6 +154,7 @@
 		2013 &copy; Metronic - Admin Golang.
 
 	</div>
+	<div class="backstretch" style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: 652px; width: 1366px; z-index: -999999; position: fixed;"><img style="position: absolute; margin: 0px; padding: 0px; border: medium none; width: 1366px; height: 724.216px; max-width: none; z-index: -999999; left: 0px; top: -36.1078px;" src="static/img/bg/2.jpg"></div>
 
 	<!-- END COPYRIGHT -->
 
@@ -201,8 +202,6 @@
 
 	<script src="/hr/static/js/app.js" type="text/javascript"></script>
 
-	<script src="/hr/static/js/login-soft.js" type="text/javascript"></script>      
-
 	<!-- END PAGE LEVEL SCRIPTS --> 
 
 	<script>
@@ -210,9 +209,6 @@
 		jQuery(document).ready(function() {     
 
 		  App.init();
-
-		  Login.init();
-
 		});
 
 	</script>

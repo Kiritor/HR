@@ -20,7 +20,7 @@ public class BaseController extends ModelView{
 	
 	@RequestMapping("/index")
 	public ModelAndView index(HttpServletRequest request,HttpServletResponse response){
-		ModelAndView view = createSingleView("index", request, response);
+		ModelAndView view = createLayoutView("admin/index", request, response);
 		return view;
 	}
 

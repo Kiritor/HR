@@ -8,7 +8,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Organization_addr")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class OrganizationAddr {
+public class OrganizationAddr extends Root{
 
 	private String place;
 	private String address;

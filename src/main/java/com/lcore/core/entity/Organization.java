@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Organization_info")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class Organization {
+public class Organization extends Root{
 	private String ouName;
 	private Date startTime;
 	private Date endTime;

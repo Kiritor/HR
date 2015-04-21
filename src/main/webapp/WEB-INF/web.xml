@@ -17,6 +17,11 @@
   <listener>
   	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
+  
+  <!--  -->
+  	<listener>
+		<listener-class>com.lcore.core.module.listener.StartupListener</listener-class>
+	</listener>
   <!-- 配置SpringMVC -->
   <servlet>
   	<servlet-name>springMVC</servlet-name>

@@ -8,7 +8,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Organization_type")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class OrganizationType {
+public class OrganizationType extends Root{
 	private String name;
 	private Boolean isEnable;
 
