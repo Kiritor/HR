@@ -35,7 +35,7 @@
     <div style="margin-right:40px;float:right;line-height:50px;">
         <span class="dropdown">
              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Chniese 
+                Language
                 <b class="caret"></b>
              </a>
 			  <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
