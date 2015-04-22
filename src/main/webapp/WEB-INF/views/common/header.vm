@@ -1,6 +1,6 @@
 <nav class="navbar box-shadow bg-white-only " role="navigation">
-    <div class="navbar-header">
-        <a class="navbar-brand " href="#">HR-ADMIN</a>
+    <div class="navbar-header" style="margin-left:20px;">
+        <img  src="${basePath}/static/img/logo.png" alt="...">
     </div>
     <div style="margin-right:40px;float:left;line-height:50px;">
         <span>
