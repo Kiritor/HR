@@ -10,19 +10,7 @@ body {
 .box-shadow {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
 }
-.navbar span {
-	display:-moz-inline-box; /* css注释：for ff2 */ 
-    display:inline-block; 
-    height:auto;
-    padding-left:10px;
-    padding-right:10px;
-    min-width:50px;
-    text-align:center;
-    cursor: pointer;
-}
-.navbar span:hover{
-	background-color:#F6F8F8;
-}
+
 
 
 .badge, .label {

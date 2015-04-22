@@ -8,12 +8,28 @@
     <link href="${basePath}/static/css/bootstrap.css" rel="stylesheet">
     <link href="${basePath}/static/css/font-awesome.min.css" rel="stylesheet">
     <link href="${basePath}/static/css/simple-line-icons.css" rel="stylesheet">
+    <link href="${basePath}/static/css/layout.css" rel="stylesheet">
     <script src="${basePath}/static/js/jquery.min.js"></script>
     <script src="${basePath}/static/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="/hr/static/img/favicon.ico" />
+    <link href="${basePath}/static/css/bootstrap-table.css" rel="stylesheet">
+    <link href="${basePath}/static/css/bootstrap-table-editable.css" rel="stylesheet">
+    <script src="${basePath}/static/js/bootstrap-table.js"></script>
+    <script src="${basePath}/static/js/bootstrap-table-zh-CN.js"></script>
+    <script src="${basePath}/static/js/dateFormat.js"></script>
+    <script src="${basePath}/static/js/bootstrap-table-editable.js"></script>
+    <script src="${basePath}/static/js/bootstrap-editable.js"></script>  
+    <script src="${basePath}/static/js/bootstrap-table-export.js"></script>
+    <script src="${basePath}/static/js/tableExport.js"></script>
 </head>
-        #parse("${header_path}")
-        #parse("${left_path}") 
-        #parse("${content_path}")
+      #parse("${header_path}")
+      <div style="position:absolute">
+           #parse("${left_path}") 
+      </div>
+      
+      <div style="margin-left:161px;font-family:'微软雅黑'">
+           #parse("${content_path}")
+      </div>
+      
 </body>
 </html>

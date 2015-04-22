@@ -1,4 +1,4 @@
-<nav class="navbar box-shadow bg-white-only " role="navigation">
+<nav class="navbar box-shadow bg-white-only " role="navigation" style="margin-bottom:1px;">
     <div class="navbar-header" style="margin-left:20px;">
         <img  src="${basePath}/static/img/logo.png" alt="...">
     </div>

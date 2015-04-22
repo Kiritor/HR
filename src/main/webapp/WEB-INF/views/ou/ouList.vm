@@ -1,0 +1,33 @@
+<ol class="breadcrumb" style="margin-bottom:2px;">
+    <li><a href="#">首页</a>
+    </li>
+    <li><a href="#">组织管理</a>
+    </li>
+    <li class="active">基本信息</li>
+</ol>
+<table data-toggle="table"
+       data-url="${basePath}/ou/getOuList"
+	   data-sort-name="ouName" 
+	   data-sort-order="desc"
+	   data-show-header="true"
+	   data-search="true"
+       data-show-refresh="true"
+       data-show-columns="true"
+	   data-pagination="true"
+	   data-side-pagination="server"
+       data-page-list="[5,10]"
+	   data-height="520"
+	   data-show-export="true">
+    <thead>
+    <tr>
+        <th data-field="id" data-visible="false">id</th>
+        <th data-field="ouName" data-sortable="true" data-editable="true">组织名称</th>
+		<th data-field="createTime" data-sortable="true" data-formatter="formatDatebox" >创建日期</th>
+		<th data-field="updateTime" data-sortable="true" data-formatter="formatDatebox">更新日期</th>
+		<th data-field="creater" data-sortable="true">创建人</th>
+		<th data-field="updater" data-sortable="true" >更新人</th>
+		<th data-field="startTime" data-sortable="true" data-formatter="formatDatebox">开始日期</th>
+		<th data-field="endTime" data-sortable="true" data-formatter="formatDatebox">失效日期</th>
+    </tr>
+    </thead>
+</table>
