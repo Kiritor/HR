@@ -63,7 +63,7 @@ public class BaseServiceImpl implements BaseService{
 	@Override
 	public List<?> getObjListByCondition(String className, String condition) {
 		// TODO Auto-generated method stub
-		return null;
+		return baseDataMng.getObjListByCondition(className, condition);
 	}
 	@Override
 	public List<?> getObjListByCondition(Class<?> className, String condition) {

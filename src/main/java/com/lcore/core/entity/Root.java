@@ -31,7 +31,6 @@ public class Root {
 	public void setId(String id) {
 		this.id = id;
 	}
-
 	public Date getCreateTime() {
 		return createTime;
 	}
