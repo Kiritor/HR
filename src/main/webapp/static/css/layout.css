@@ -1,0 +1,109 @@
+.navbar span {
+	display: -moz-inline-box; /* css注释：for ff2 */
+	display: inline-block;
+	height: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	min-width: 50px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.navbar span:hover {
+	background-color: #F6F8F8;
+}
+
+/*
+  left
+*/
+img {
+	border: none;
+}
+
+dl, dt, dd {
+	display: block;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+/*left*/
+.leftsidebar_box {
+	font-family: '微软雅黑';
+	width: 160px;
+	overflow: visible !important;
+	height: 100%;
+	background-color: #ffffff;
+	border: solid 1px #ddd;
+	border-top-width: 0px;
+}
+
+.leftsidebar_box dt {
+	padding-left: 40px;
+	padding-right: 10px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	color: #000;
+	font-size: 14px;
+	position: relative;
+	line-height: 48px;
+	cursor: pointer;
+}
+
+.leftsidebar_box dd {
+	background-color: #fff;
+	padding-left: 40px;
+	margin-top: 5px;
+}
+
+.leftsidebar_box dd:hover {
+	background-color: #97D2A6;
+}
+
+.leftsidebar_box dd a {
+	color: #000;
+	line-height: 20px;
+}
+
+.leftsidebar_box dt img {
+	position: absolute;
+	right: 10px;
+	top: 20px;
+}
+
+.system_log dt {
+	background-image: url(../img/left/system.png)
+}
+
+.custom dt {
+	background-image: url(../img/left/custom.png)
+}
+
+.channel dt {
+	background-image: url(../img/left/channel.png)
+}
+
+.app dt {
+	background-image: url(../img/left/app.png)
+}
+
+.cloud dt {
+	background-image: url(../img/left/cloud.png)
+}
+
+.syetem_management dt {
+	background-image: url(../img/left/syetem_management.png)
+}
+
+.source dt {
+	background-image: url(../img/left/source.png)
+}
+
+.statistics dt {
+	background-image: url(../img/left/statistics.png)
+}
+
+.leftsidebar_box dl dd:last-child {
+	margin-bottom: 5px;
+}
