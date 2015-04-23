@@ -23,33 +23,27 @@ public class BaseServiceImpl implements BaseService{
 	}
 	@Override
 	public void saveOrUpdate(Root root) throws Exception {
-		// TODO Auto-generated method stub
-		
+		baseDataMng.saveOrUpdate(root);
 	}
 	@Override
 	public void updateObj(Root root) throws Exception {
-		// TODO Auto-generated method stub
-		
+		baseDataMng.updateObj(root);
 	}
 	@Override
 	public Root getObj(String className, String id) {
-		// TODO Auto-generated method stub
-		return null;
+		return baseDataMng.getObj(className, id);
 	}
 	@Override
 	public Root getObj(Class<?> className, String id) {
-		// TODO Auto-generated method stub
-		return null;
+		return baseDataMng.getObj(className, id);
 	}
 	@Override
 	public void deleteObj(String className, String id) throws Exception {
-		// TODO Auto-generated method stub
-		
+		baseDataMng.deleteObj(className, id);
 	}
 	@Override
 	public void deleteObj(Class<?> className, String id) throws Exception {
-		// TODO Auto-generated method stub
-		
+		baseDataMng.deleteObj(className, id);
 	}
 	@Override
 	public Root getObjByCondition(String className, String condition) {
@@ -57,30 +51,31 @@ public class BaseServiceImpl implements BaseService{
 	}
 	@Override
 	public Root getObjByCondition(Class<?> className, String condition) {
-		// TODO Auto-generated method stub
-		return null;
+		return baseDataMng.getObjByCondition(className, condition);
 	}
 	@Override
-	public List<?> getObjListByCondition(String className, String condition) {
+	public List<Root> getObjListByCondition(String className, String condition) {
 		// TODO Auto-generated method stub
 		return baseDataMng.getObjListByCondition(className, condition);
 	}
 	@Override
-	public List<?> getObjListByCondition(Class<?> className, String condition) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Root> getObjListByCondition(Class<?> className, String condition) {
+		return baseDataMng.getObjListByCondition(className, condition);
 	}
 	@Override
-	public List<?> getPagedObjListWithCondition(String className,
+	public List<Root> getPagedObjListWithCondition(String className,
 			String condition, int firstRow, int pageSize) {
-		// TODO Auto-generated method stub
-		return null;
+		return baseDataMng.getPagedObjListWithCondition(className, condition, firstRow, pageSize);
 	}
 	@Override
-	public List<?> getPagedObjListWithCondition(Class<?> className,
+	public List<Root> getPagedObjListWithCondition(Class<?> className,
 			String condition, int firstRow, int pageSize) {
+		return baseDataMng.getPagedObjListWithCondition(className, condition, firstRow, pageSize);
+	}
+	@Override
+	public long getCountByCondition(String className, String condition) {
 		// TODO Auto-generated method stub
-		return null;
+		return baseDataMng.getCountByCondition(className, condition);
 	}
 
 }

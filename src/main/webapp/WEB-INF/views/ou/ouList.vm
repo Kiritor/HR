@@ -5,19 +5,35 @@
     </li>
     <li class="active">基本信息</li>
 </ol>
-<table data-toggle="table"
-       data-url="${basePath}/ou/getOuList"
+<div id="toolbar" class="btn-group">
+    <input class="form-" type="text" placeholder="搜索" style="float:left" id="searchBox"/>
+    <button type="button" class="btn btn-default" id="add" style="margin-left:5px;">
+        <i class="glyphicon glyphicon-search"></i>
+    </button>
+    <button type="button" class="btn btn-default">
+        <i class="glyphicon glyphicon-plus"></i>
+    </button>
+    <button type="button" class="btn btn-default">
+        <i class="glyphicon glyphicon-edit"></i>
+    </button>
+	<button type="button" class="btn btn-default">
+        <i class="glyphicon glyphicon-remove-circle"></i>
+    </button>
+</div>
+<table id="ouList" data-toggle="table"
+       data-url="${basePath}/ou/getOuList?search"
 	   data-sort-name="ouName" 
 	   data-sort-order="desc"
 	   data-show-header="true"
-	   data-search="true"
        data-show-refresh="true"
        data-show-columns="true"
 	   data-pagination="true"
 	   data-side-pagination="server"
        data-page-list="[5,10]"
-	   data-height="520"
-	   data-show-export="true">
+	   data-height="525"
+	   data-show-export="true"
+	   data-toolbar="#toolbar"
+	>
     <thead>
     <tr>
         <th data-field="id" data-visible="false">id</th>
@@ -31,3 +47,23 @@
     </tr>
     </thead>
 </table>
+<script>
+   $("#add").on("click",function(){
+        search();
+   });
+   
+   function search(){
+        var $table=$("#ouList");
+		var searchText = $("#searchBox").val();
+		$.post("${basePath}/ou/getOuList",{
+		    search:searchText,
+			limit:10,
+			offset:0,
+			order:"desc",
+			sort:'ouName'
+		}, function (res) {
+           $table.bootstrapTable('load', res);
+        });
+   }
+</script>
+4147

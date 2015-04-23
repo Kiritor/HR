@@ -83,7 +83,7 @@ public interface BaseService {
 	 * @param condition
 	 * @return
 	 */
-	public abstract List<?> getObjListByCondition(String className,String condition);
+	public abstract List<Root> getObjListByCondition(String className,String condition);
 	
 	/**
 	 * 根据条件表达式和实体得到集合纪录
@@ -91,7 +91,7 @@ public interface BaseService {
 	 * @param condition
 	 * @return
 	 */
-	public abstract List<?> getObjListByCondition(Class<?> className,String condition);
+	public abstract List<Root> getObjListByCondition(Class<?> className,String condition);
 
 	/**
 	 * 根据条件得到分页纪录
@@ -101,7 +101,7 @@ public interface BaseService {
 	 * @param pageSize
 	 * @return
 	 */
-    public abstract List<?> getPagedObjListWithCondition(String className,String condition,int firstRow,int pageSize);
+    public abstract List<Root> getPagedObjListWithCondition(String className,String condition,int firstRow,int pageSize);
 
     /**
      * 根据查询条件得到分页纪录
@@ -111,5 +111,13 @@ public interface BaseService {
      * @param pageSize
      * @return
      */
-    public abstract List<?> getPagedObjListWithCondition(Class<?> className,String condition,int firstRow,int pageSize);
+    public abstract List<Root> getPagedObjListWithCondition(Class<?> className,String condition,int firstRow,int pageSize);
+    
+    /**
+     * 根据查询条件获取总的条数
+     * @param className
+     * @param condition
+     * @return
+     */
+    public long getCountByCondition(String className,String condition);
 }

@@ -36,7 +36,6 @@
   	<servlet-name>springMVC</servlet-name>
   	<url-pattern>/</url-pattern>
   </servlet-mapping>
-  
   <!-- 配置字符集 -->
   <filter>
   	<filter-name>encodingFilter</filter-name>

@@ -88,17 +88,16 @@ public class BaseDataMngImpl implements BaseDataMng {
 		return getObjListByCondition(className.getSimpleName(),condition);
 	}
 
-	public List<?> getPagedObjListWithCondition(String className,
+	public List<Root> getPagedObjListWithCondition(String className,
 			String condition, int firstRow, int pageSize) {
 		String queryString = "";
 		if(condition!=null&&!condition.trim().isEmpty()){
 			queryString = (new StringBuffer(" from ")).append(className)
-					.append(" as obj where 1=1 and ( ").append(condition)
-					.append(" )").toString();
+					.append(" as obj where 1=1 and  ").append(condition).toString();
 		}
 		else
 			queryString  +=  "from "+className+" as obj where 1=1";
-		Query query = getSession().createQuery(queryString);
+ 		Query query = getSession().createQuery(queryString);
 		if(pageSize!=-1) {
 		  query.setMaxResults(pageSize);
 		  query.setFirstResult(firstRow);
@@ -106,8 +105,12 @@ public class BaseDataMngImpl implements BaseDataMng {
 		return query.list();
 	}
 
-	public List<?> getPagedObjListWithCondition(Class<?> className,
+	public List<Root> getPagedObjListWithCondition(Class<?> className,
 			String condition, int firstRow, int pageSize) {
 		return getPagedObjListWithCondition(className.getClass().getSimpleName(), condition, firstRow, pageSize);
+	}
+	
+	public long getCountByCondition(String className,String condition){
+		return getObjListByCondition(className, condition).size();
 	}
 }

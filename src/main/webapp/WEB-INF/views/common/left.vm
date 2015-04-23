@@ -33,7 +33,7 @@
     </dl>
 
     <dl class="channel">
-        <dt>渠道管理<img src="${basePath}/static/img/left/select_xl01.png"></dt>
+        <dt>人员管理<img src="${basePath}/static/img/left/select_xl01.png"></dt>
         <dd class="first_dd"><a href="#">渠道主页</a>
         </dd>
         <dd><a href="#">渠道标准管理</a>
@@ -47,7 +47,7 @@
     </dl>
 
     <dl class="app">
-        <dt >APP管理<img src="${basePath}/static/img/left/select_xl01.png"></dt>
+        <dt >薪酬管理<img src="${basePath}/static/img/left/select_xl01.png"></dt>
         <dd class="first_dd"><a href="#">App运营商管理</a>
         </dd>
         <dd><a href="#">开放接口管理</a>
@@ -57,13 +57,13 @@
     </dl>
 
     <dl class="cloud">
-        <dt>大数据云平台</dt>
+        <dt>合同管理</dt>
         <dd class="first_dd"><a href="#">平台运营商管理</a>
         </dd>
     </dl>
 
     <dl class="syetem_management">
-        <dt>系统管理<img src="${basePath}/static/img/left/select_xl01.png"></dt>
+        <dt>绩效管理<img src="${basePath}/static/img/left/select_xl01.png"></dt>
         <dd class="first_dd"><a href="#">后台用户管理</a>
         </dd>
         <dd><a href="#">角色管理</a>
@@ -82,15 +82,6 @@
         </dd>
     </dl>
 
-    <dl class="source">
-        <dt>素材库管理<img src="${basePath}/static/img/left/select_xl01.png"></dt>
-        <dd class="first_dd"><a href="#">图片库</a>
-        </dd>
-        <dd><a href="#">链接库</a>
-        </dd>
-        <dd><a href="#">推广管理</a>
-        </dd>
-    </dl>
 
     <dl class="statistics">
         <dt>统计分析<img src="${basePath}/static/img/left/select_xl01.png"></dt>
