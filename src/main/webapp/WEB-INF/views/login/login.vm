@@ -2,7 +2,6 @@
 <head>
 	<title>HR-Login</title>
 	<link href="${basePath}/static/css/templatemo_style.css" rel="stylesheet" type="text/css">	
-	<link href="${basePath}/static/css/style.css" rel="stylesheet">
     <link href="${basePath}/static/css/bootstrap.css" rel="stylesheet">
     <link href="${basePath}/static/css/font-awesome.min.css" rel="stylesheet">
     <link href="${basePath}/static/css/simple-line-icons.css" rel="stylesheet">
