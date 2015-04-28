@@ -33,9 +33,13 @@
 	   data-height="525"
 	   data-show-export="true"
 	   data-toolbar="#toolbar"
+	   data-show-paginationSwitch="true"
+	   data-pagination-detail-h-align="left"
+	   data-pagination-h-align="right"
 	>
     <thead>
     <tr>
+	    <th data-field="state" data-checkbox="true"></th>
         <th data-field="id" data-visible="false">id</th>
         <th data-field="ouName" data-sortable="true" data-editable="true">组织名称</th>
 		<th data-field="createTime" data-sortable="true" data-formatter="formatDatebox" >创建日期</th>
@@ -48,22 +52,30 @@
     </thead>
 </table>
 <script>
-   $("#add").on("click",function(){
-        search();
-   });
+   $(function(){
+	   $("#add").on("click",function(){
+			search();
+	   });
+	   function search(){
+			var $table=$("#ouList");
+			var searchText = $("#searchBox").val();
+			$.post("${basePath}/ou/getOuList",{
+				search:searchText,
+				limit:10,
+				offset:0,
+				order:"desc",
+				sort:'ouName'
+			}, function (res) {
+
+			   $table.bootstrapTable('load', res);
+			});
+	   }
+	   $("#ouList").on('sort.bs.table', function (name,order) {
+			$(this).bootstrapTable("getOptions").pageNumber=1;   //默认排序从第一页开始
+			console.info($(this).bootstrapTable("getOptions"))
+       });
+	   
+   })
    
-   function search(){
-        var $table=$("#ouList");
-		var searchText = $("#searchBox").val();
-		$.post("${basePath}/ou/getOuList",{
-		    search:searchText,
-			limit:10,
-			offset:0,
-			order:"desc",
-			sort:'ouName'
-		}, function (res) {
-           $table.bootstrapTable('load', res);
-        });
-   }
+   
 </script>
-4147

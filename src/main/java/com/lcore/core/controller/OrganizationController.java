@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.lcore.core.entity.Organization;
 import com.lcore.core.service.OrganizationService;
 import com.lcore.core.view.ModelView;
 
@@ -34,7 +35,7 @@ public class OrganizationController extends ModelView{
 			@RequestParam String order,@RequestParam String sort) throws Exception{
 		Map<String,Object> map = new HashedMap();
 		List list = organizationService.getOuList(offset,limit,sort,order,search);
-		map.put("total", 12);
+		map.put("total", organizationService.getOuList(0, -1, sort, order, search).size());
 		map.put("rows",list);
 		return map;
 	}

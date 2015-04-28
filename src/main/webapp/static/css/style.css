@@ -72,7 +72,7 @@ body {
 	background-color: red;
 }
 
-input {
+input[type=text]{
 	background-color: #fff;
 	margin-right:5px;
     background-image: none;

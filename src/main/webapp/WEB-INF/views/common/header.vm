@@ -51,7 +51,7 @@
           <i class="icon-bell fa-fw"></i>
           <i class="badge badge-sm up bg-danger pull-right-xs" style="background-color:red;">2</i>
        </span>
-        <span>Tao.liang&nbsp;<b class="caret"></b>&nbsp;
+        <span>$!{Env.user.getUserName()}&nbsp;<b class="caret"></b>&nbsp;
            <img  src="${basePath}/static/img/a0.jpg" alt="..." class="img-circle">
        </span>
        

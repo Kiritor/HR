@@ -5,6 +5,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.servlet.ModelAndView;
 
+import com.lcore.core.entity.User;
+import com.lcore.core.utils.Env;
 import com.lcore.core.utils.GlobalConfigHolder;
 
 /**
@@ -25,6 +27,9 @@ public class ModelView {
 		ModelAndView view = new ModelAndView();
 		view.addObject("basePath",GlobalConfigHolder.getProperty("basePath"));
 		view.setViewName(fileName);
+		Env env = Env.instance();
+		env.user = (User)request.getSession().getAttribute("user");
+		view.addObject("Env",env);
 		return view;
 	}
 
@@ -48,6 +53,9 @@ public class ModelView {
 		view.addObject("content_path", fileName + ".vm");
 		String path = GlobalConfigHolder.getProperty("basePath");
 		view.addObject("basePath",GlobalConfigHolder.getProperty("basePath"));
+		Env env = Env.instance();
+		env.user = (User)request.getSession().getAttribute("user");
+		view.addObject("Env",env);
 		return view;
 	}
 

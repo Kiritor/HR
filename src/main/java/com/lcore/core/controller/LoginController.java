@@ -23,9 +23,11 @@ public class LoginController extends ModelView{
 			@RequestParam String userName,@RequestParam String password) throws Exception{
 		String condition = " obj.userName= '"+userName+"' and password='"+password+"'";
 		Root root = baseService.getObjByCondition(User.class.getSimpleName(), condition);
-		if(root!=null)
-		   return createLayoutView("admin/index", request, response);
-		else 
+		if(root!=null){
+		   request.getSession().setAttribute("user", (User)root);
+		   ModelAndView view = createLayoutView("admin/index", request, response);
+		   return view;
+		}else 
 		   return createSingleView("login/login", request, response);
 	}
 		
