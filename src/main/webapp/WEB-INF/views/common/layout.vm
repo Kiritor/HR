@@ -21,6 +21,8 @@
     <script src="${basePath}/static/js/bootstrap-editable.js"></script>  
     <script src="${basePath}/static/js/bootstrap-table-export.js"></script>
     <script src="${basePath}/static/js/tableExport.js"></script>
+	<script src="${basePath}/static/js/jquery.datetimepicker.js"></script>
+	<link href="${basePath}/static/css/jquery.datetimepicker.css" rel="stylesheet">
 </head>
       #parse("${header_path}")
       <div style="position:absolute">

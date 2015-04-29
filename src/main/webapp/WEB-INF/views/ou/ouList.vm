@@ -1,3 +1,4 @@
+
 <ol class="breadcrumb" style="margin-bottom:2px;">
     <li><a href="#">首页</a>
     </li>
@@ -5,12 +6,46 @@
     </li>
     <li class="active">基本信息</li>
 </ol>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">添加组织</h4>
+      </div>
+      <div class="modal-body">
+      <form class="form-inline">
+	  <div class="form-group">
+		<label for="addOuName">组织名称</label>
+		<input type="text" class="form-control" id="addOuName">
+	  </div>
+	  <div class="form-group">
+		<label for="addEndTime">失效日期</label>
+		<div class="input-group">
+			<input type="time" class="form-control" id="addEndTime">
+			<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+		</div>
+		
+	  </div>
+	</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-success" id="addOu">添加</button>
+      </div>
+    </div>
+  </div>
+</div>
 <div id="toolbar" class="btn-group">
     <input class="form-" type="text" placeholder="搜索" style="float:left" id="searchBox"/>
     <button type="button" class="btn btn-default" id="search" style="margin-left:5px;">
         <i class="glyphicon glyphicon-search"></i>
     </button>
-    <button type="button" class="btn btn-default">
+	<button type="button" class="btn btn-default" id="save">
+        <i class="glyphicon glyphicon-floppy-save"></i>
+    </button>
+    <button  class="btn btn-default" id="add" data-toggle="modal" data-target="#myModal">
         <i class="glyphicon glyphicon-plus"></i>
     </button>
     <button type="button" class="btn btn-default">
@@ -41,7 +76,7 @@
     <tr>
 	    <th data-field="state" data-checkbox="true"></th>
         <th data-field="id" data-visible="false">id</th>
-        <th data-field="ouName" data-sortable="true" data-editable="true">组织名称</th>
+        <th data-field="ouName" data-sortable="true" data-editable="false">组织名称</th>
 		<th data-field="createTime" data-sortable="true" data-formatter="formatDatebox" >创建日期</th>
 		<th data-field="updateTime" data-sortable="true" data-formatter="formatDatebox">更新日期</th>
 		<th data-field="creater" data-sortable="true">创建人</th>
@@ -51,11 +86,16 @@
     </tr>
     </thead>
 </table>
+
 <script>
    $(function(){
 	   $("#search").on("click",function(){
 			search();
 	   });
+	   $("#myModal").on("show.bs.modal",function(){
+	       $("#addOuName").val("");
+		   $("#addEndTime").val("");
+	   })
 	   function search(){
 			var $table=$("#ouList");
 			var searchText = $("#searchBox").val();
@@ -75,6 +115,22 @@
 			console.info($(this).bootstrapTable("getOptions"))
        });
 	   
+	   $("#addEndTime").datetimepicker();
+	   $("#addOu").on("click",function(){
+	       var obj = new Object();
+		   obj.ouName = $("#addOuName").val();
+		   obj.endTime =$("#addEndTime").val();
+		   $.ajax({
+		      url:'${basePath}/ou/addOu',
+			  data:obj,
+			  method:'post',
+			  dataType:'json',
+			  complete:function(jqXHR, textStatus) {
+				  $("#myModal").modal("hide");
+				  search();
+              }
+		   });
+	   });
    })
    
    
