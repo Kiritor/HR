@@ -7,7 +7,7 @@
 </ol>
 <div id="toolbar" class="btn-group">
     <input class="form-" type="text" placeholder="搜索" style="float:left" id="searchBox"/>
-    <button type="button" class="btn btn-default" id="add" style="margin-left:5px;">
+    <button type="button" class="btn btn-default" id="search" style="margin-left:5px;">
         <i class="glyphicon glyphicon-search"></i>
     </button>
     <button type="button" class="btn btn-default">
@@ -53,7 +53,7 @@
 </table>
 <script>
    $(function(){
-	   $("#add").on("click",function(){
+	   $("#search").on("click",function(){
 			search();
 	   });
 	   function search(){
@@ -66,7 +66,7 @@
 				order:"desc",
 				sort:'ouName'
 			}, function (res) {
-
+               $table.bootstrapTable("getOptions").pageNumber=1;   //默认排序从第一页开始
 			   $table.bootstrapTable('load', res);
 			});
 	   }
