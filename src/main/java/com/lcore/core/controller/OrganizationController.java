@@ -39,4 +39,9 @@ public class OrganizationController extends ModelView{
 		map.put("rows",list);
 		return map;
 	}
+	@RequestMapping("/addOu")
+	public void addOu(HttpServletRequest request,HttpServletResponse response,
+			Organization org) throws Exception{
+	    organizationService.addOu(org);
+	}
 }

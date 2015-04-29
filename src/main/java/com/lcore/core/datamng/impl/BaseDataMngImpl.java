@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.lcore.core.datamng.BaseDataMng;
 import com.lcore.core.entity.Root;
+import com.lcore.core.utils.Env;
 import com.lcore.core.utils.TemplateFactory;
 
 
@@ -31,8 +32,12 @@ public class BaseDataMngImpl implements BaseDataMng {
 	}
 
 	public String saveObj(Root root) throws Exception {
-		//压入创建时间
-		root.setCreateTime(new Date());      
+		//压入创建时间,更新时间
+		root.setCreateTime(new Date());    
+		root.setUpdateTime(new Date());
+		//压入创建人,更新人
+		root.setCreater(Env.instance().user.getUserName());
+		root.setUpdater(Env.instance().user.getUserName());
 		return (String) getHibernateTemplate().save(root);
 	}
 
@@ -43,6 +48,8 @@ public class BaseDataMngImpl implements BaseDataMng {
 	public void updateObj(Root root) throws Exception {
 		//压入更新时间
 		root.setUpdateTime(new Date());
+		//压入更新人
+		root.setUpdater(Env.instance().user.getUserName());
         getHibernateTemplate().update(root);
 	}
 

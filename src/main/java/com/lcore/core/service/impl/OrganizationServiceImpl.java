@@ -1,5 +1,6 @@
 package com.lcore.core.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -26,6 +27,12 @@ public class OrganizationServiceImpl extends BaseServiceImpl implements Organiza
 		if(null!=sort&&!"".equals(sort))
 	      	condition+=" order by "+" obj."+sort+"" + "  "+order;
 		return this.getPagedObjListWithCondition(Organization.class.getSimpleName(), condition, offset, limit);
+	}
+
+	@Override
+	public void addOu(Organization org) throws Exception {
+		org.setStartTime(new Date());
+		this.saveObj(org);
 	}
 
 }
