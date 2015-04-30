@@ -51,9 +51,16 @@
           <i class="icon-bell fa-fw"></i>
           <i class="badge badge-sm up bg-danger pull-right-xs" style="background-color:red;">2</i>
        </span>
-        <span>$!{Env.user.getUserName()}&nbsp;<b class="caret"></b>&nbsp;
-           <img  src="${basePath}/static/img/a0.jpg" alt="..." class="img-circle">
+        <span class="dropdown">
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+			    $!{Env.user.getUserName()}&nbsp;
+                <img  src="${basePath}/static/img/a0.jpg" alt="..." class="img-circle">
+                <b class="caret"></b>
+             </a>
+			  <ul style="min-width:80px;" class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="${basePath}/logout"><i class="glyphicon glyphicon-off"></i>退出</a></li>
+			  </ul>
+			
        </span>
-       
     </div>
 </nav>

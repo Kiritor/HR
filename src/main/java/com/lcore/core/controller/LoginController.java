@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.lcore.core.entity.Root;
 import com.lcore.core.entity.User;
 import com.lcore.core.service.BaseService;
+import com.lcore.core.utils.Env;
 import com.lcore.core.view.ModelView;
 
 @Controller
@@ -31,5 +32,11 @@ public class LoginController extends ModelView{
 		   return createSingleView("login/login", request, response);
 	}
 		
+	@RequestMapping("/logout")
+	public ModelAndView logout(HttpServletRequest request,HttpServletResponse response) throws Exception{
+		request.getSession().removeAttribute("user");
+		Env.instance().user = null;
+		return createSingleView("login/login", request, response);
+	}
 
 }

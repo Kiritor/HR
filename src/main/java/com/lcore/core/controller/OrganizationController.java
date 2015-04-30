@@ -1,5 +1,6 @@
 package com.lcore.core.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -43,5 +44,15 @@ public class OrganizationController extends ModelView{
 	public void addOu(HttpServletRequest request,HttpServletResponse response,
 			Organization org) throws Exception{
 	    organizationService.addOu(org);
+	}
+	@RequestMapping("/deleteOu")
+	public void deleteOu(HttpServletRequest request,HttpServletResponse response,
+			@RequestParam String ids) throws Exception{
+		String[] idA = ids.split(",");
+		List<String> idList = new ArrayList<String>();
+		for(int i=0;i<idA.length;i++){
+			idList.add(idA[i]);
+		}
+        organizationService.deleteOu(idList);
 	}
 }
