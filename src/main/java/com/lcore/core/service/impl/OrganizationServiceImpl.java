@@ -35,4 +35,12 @@ public class OrganizationServiceImpl extends BaseServiceImpl implements Organiza
 		this.saveObj(org);
 	}
 
+	@Override
+	public void deleteOu(List<String> ids) throws Exception {
+		for(String id:ids){
+		   if(id!=null&&!"".equals(id.trim()))
+              this.deleteObj(Organization.class.getName(), id);			
+ 		}
+	}
+
 }
