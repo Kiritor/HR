@@ -95,6 +95,9 @@ public class BaseDataMngImpl implements BaseDataMng {
 		return getObjListByCondition(className.getSimpleName(),condition);
 	}
 
+	/**
+	 * HQL
+	 */
 	public List<Root> getPagedObjListWithCondition(String className,
 			String condition, int firstRow, int pageSize) {
 		String queryString = "";
