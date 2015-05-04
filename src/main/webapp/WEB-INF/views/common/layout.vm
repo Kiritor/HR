@@ -21,8 +21,12 @@
     <script src="${basePath}/static/js/bootstrap-editable.js"></script>  
     <script src="${basePath}/static/js/bootstrap-table-export.js"></script>
     <script src="${basePath}/static/js/tableExport.js"></script>
+    <link href="${basePath}/static/css/animate.css" rel="stylesheet">
+    <link href="${basePath}/static/css/flavr.css" rel="stylesheet">
+	<script src="${basePath}/static/js/flavr.js"></script>
 	<script src="${basePath}/static/js/jquery.datetimepicker.js"></script>
 	<link href="${basePath}/static/css/jquery.datetimepicker.css" rel="stylesheet">
+	
 </head>
       #parse("${header_path}")
       <div style="position:absolute">
