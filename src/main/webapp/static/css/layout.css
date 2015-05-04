@@ -32,11 +32,11 @@ a {
 .leftsidebar_box {
 	font-family: '微软雅黑';
 	width: 160px;
-	overflow: visible !important;
-	height: 100%;
-	min-height:525px;
-	background-color: #ffffff;
-	border: solid 1px #ddd;
+    height: 100% !important;
+    overflow: visible !important;
+    position: fixed;
+    width: 160px;
+    border: solid 1px #ddd;
 	border-top-width: 0px;
 }
 
