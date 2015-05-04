@@ -1,4 +1,3 @@
-
 <ol class="breadcrumb" style="margin-bottom:2px;">
     <li><a href="#">首页</a>
     </li>
@@ -8,152 +7,189 @@
 </ol>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">添加组织</h4>
-      </div>
-      <div class="modal-body">
-      <form class="form-inline">
-	  <div class="form-group">
-		<label for="addOuName">组织名称</label>
-		<input type="text" class="form-control" id="addOuName">
-	  </div>
-	  <div class="form-group">
-		<label for="addEndTime">失效日期</label>
-		<div class="input-group">
-			<input type="time" class="form-control" id="addEndTime">
-			<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-		</div>
-		
-	  </div>
-	</form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
-        <button type="button" class="btn btn-success" id="addOu">添加</button>
-      </div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">添加组织</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="addOuName">组织名称</label>
+                        <input type="text" class="form-control" id="addOuName">
+                    </div>
+                    <div class="form-group">
+                        <label for="addEndTime">失效日期</label>
+                        <div class="input-group">
+                            <input type="time" class="form-control" id="addEndTime">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-success" id="addOu">添加</button>
+            </div>
+        </div>
     </div>
-  </div>
+</div>
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">更新组织</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="">组织名称</label>
+                        <input type="text" class="form-control" id="editOuName">
+                        <input type="hidden" class="form-control" id="editId">
+                    </div>
+                    <div class="form-group">
+                        <label for="">失效日期</label>
+                        <div class="input-group">
+                            <input type="time" class="form-control" id="editEndTime">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-success" id="editOu">确定</button>
+            </div>
+        </div>
+    </div>
 </div>
 <div id="toolbar" class="btn-group">
-    <input class="form-" type="text" placeholder="搜索" style="float:left" id="searchBox"/>
+    <input class="form-" type="text" placeholder="搜索" style="float:left" id="searchBox" />
     <button type="button" class="btn btn-default" id="search" style="margin-left:5px;">
         <i class="glyphicon glyphicon-search"></i>
     </button>
-	<button type="button" class="btn btn-default" id="save">
+    <button type="button" class="btn btn-default" id="save">
         <i class="glyphicon glyphicon-floppy-save"></i>
     </button>
-    <button  class="btn btn-default" id="add" data-toggle="modal" data-target="#myModal">
+    <button class="btn btn-default" id="add" data-toggle="modal" data-target="#myModal">
         <i class="glyphicon glyphicon-plus"></i>
     </button>
-    <button type="button" class="btn btn-default">
+    <button type="button" class="btn btn-default" id="edit">
         <i class="glyphicon glyphicon-edit"></i>
     </button>
-	<button type="button" class="btn btn-default" id="delete">
+    <button type="button" class="btn btn-default" id="delete">
         <i class="glyphicon glyphicon-remove-circle"></i>
     </button>
 </div>
-<table id="ouList" data-toggle="table"
-       data-url="${basePath}/ou/getOuList?search"
-	   data-sort-name="ouName" 
-	   data-sort-order="desc"
-	   data-show-header="true"
-       data-show-refresh="true"
-       data-show-columns="true"
-	   data-pagination="true"
-	   data-side-pagination="server"
-       data-page-list="[5,10]"
-	   data-height="525"
-	   data-show-export="true"
-	   data-toolbar="#toolbar"
-	   data-show-paginationSwitch="true"
-	   data-pagination-detail-h-align="left"
-	   data-pagination-h-align="right"
-	   data-click-to-select="true"
-	>
+<table id="ouList" data-toggle="table" data-url="${basePath}/ou/getOuList?search" data-sort-name="ouName" data-sort-order="desc" data-show-header="true" data-show-refresh="true" data-show-columns="true" data-pagination="true" data-side-pagination="server" data-page-list="[5,10]" data-height="525" data-show-export="true" data-toolbar="#toolbar" data-show-paginationSwitch="true" data-pagination-detail-h-align="left" data-pagination-h-align="right" data-click-to-select="true">
     <thead>
-    <tr>
-	    <th data-field="state" data-checkbox="true"></th>
-        <th data-field="id" data-visible="false">id</th>
-        <th data-field="ouName" data-sortable="true" data-editable="false">组织名称</th>
-		<th data-field="createTime" data-sortable="true" data-formatter="formatDatebox" >创建日期</th>
-		<th data-field="updateTime" data-sortable="true" data-formatter="formatDatebox">更新日期</th>
-		<th data-field="creater" data-sortable="true">创建人</th>
-		<th data-field="updater" data-sortable="true" >更新人</th>
-		<th data-field="startTime" data-sortable="true" data-formatter="formatDatebox">开始日期</th>
-		<th data-field="endTime" data-sortable="true" data-formatter="formatDatebox">失效日期</th>
-    </tr>
+        <tr>
+            <th data-field="state" data-checkbox="true"></th>
+            <th data-field="id" data-visible="false">id</th>
+            <th data-field="ouName" data-sortable="true" data-editable="false">组织名称</th>
+            <th data-field="createTime" data-sortable="true" data-formatter="formatDatebox">创建日期</th>
+            <th data-field="updateTime" data-sortable="true" data-formatter="formatDatebox">更新日期</th>
+            <th data-field="creater" data-sortable="true">创建人</th>
+            <th data-field="updater" data-sortable="true">更新人</th>
+            <th data-field="startTime" data-sortable="true" data-formatter="formatDatebox">开始日期</th>
+            <th data-field="endTime" data-sortable="true" data-formatter="formatDatebox">失效日期</th>
+        </tr>
     </thead>
 </table>
 
 <script>
-   $(function(){
-	   $("#search").on("click",function(){
-			search();
-	   });
-	   $("#myModal").on("show.bs.modal",function(){
-	       $("#addOuName").val("");
-		   $("#addEndTime").val("");
-		    $(this).find('.modal-dialog').css({  
-		        'width': function () {  
-		            return 800;  
-		        }  
-		    });      
-	   })
-	   function search(){
-			var $table=$("#ouList");
-			var searchText = $("#searchBox").val();
-			$.post("${basePath}/ou/getOuList",{
-				search:searchText,
-				limit:10,
-				offset:0,
-				order:"desc",
-				sort:'ouName'
-			}, function (res) {
-               $table.bootstrapTable("getOptions").pageNumber=1;   //默认排序从第一页开始
-			   $table.bootstrapTable('load', res);
-			});
-	   }
-	   $("#ouList").on('sort.bs.table', function (name,order) {
-			$(this).bootstrapTable("getOptions").pageNumber=1;   //默认排序从第一页开始
-			console.info($(this).bootstrapTable("getOptions"))
-       });
-	   
-	   $("#addEndTime").datetimepicker();
-	   $("#addOu").on("click",function(){
-	       var obj = new Object();
-		   obj.ouName = $("#addOuName").val();
-		   obj.endTime =$("#addEndTime").val();
-		   $.ajax({
-		      url:'${basePath}/ou/addOu',
-			  data:obj,
-			  method:'post',
-			  dataType:'json',
-			  complete:function(jqXHR, textStatus) {
-				  $("#myModal").modal("hide");
-				  search();
-              }
-		   });
-	   });
-	   $("#delete").on("click",function(){
-	      var datas = $("#ouList").bootstrapTable("getSelections");
-	      var ids="";
-	      var i = 0;
-	      for(i=0;i<datas.length;i++){
-	          ids+= datas[i].id +",";
-	      }
-	      $.ajax({
-		      url:'${basePath}/ou/deleteOu?ids='+ids,
-			  method:'post',
-			  dataType:'json',
-			  complete:function(jqXHR, textStatus) {
-				  search();
-              }
-		   });
-	   });
-   })
-   
-   
+    $(function() {
+        $("#search").on("click", function() {
+            search();
+        });
+        $("#myModal").on("show.bs.modal", function() {
+            $("#addOuName").val("");
+            $("#addEndTime").val("");
+            $(this).find('.modal-dialog').css({
+                'width': function() {
+
+                }
+            });
+        })
+        function search() {
+            var $table = $("#ouList");
+            var searchText = $("#searchBox").val();
+            $.post("${basePath}/ou/getOuList", {
+                search: searchText,
+                limit: 10,
+                offset: 0,
+                order: "desc",
+                sort: 'ouName'
+            }, function(res) {
+                $table.bootstrapTable("getOptions").pageNumber = 1; //默认排序从第一页开始
+                $table.bootstrapTable('load', res);
+            });
+        }
+        $("#ouList").on('sort.bs.table', function(name, order) {
+            $(this).bootstrapTable("getOptions").pageNumber = 1; //默认排序从第一页开始
+            console.info($(this).bootstrapTable("getOptions"))
+        });
+
+        $("#addEndTime").datetimepicker();
+        $("#editEndTime").datetimepicker();
+        $("#addOu").on("click", function() {
+            var obj = new Object();
+            obj.ouName = $("#addOuName").val();
+            obj.endTime = $("#addEndTime").val();
+            $.ajax({
+                url: '${basePath}/ou/addOu',
+                data: obj,
+                method: 'post',
+                dataType: 'json',
+                complete: function(jqXHR, textStatus) {
+                    $("#myModal").modal("hide");
+                    search();
+                }
+            });
+        });
+
+        $("#edit").on("click", function() {
+            var data = $("#ouList").bootstrapTable("getSelections");
+            console.info(data)
+            if (data.length != 1) {
+                var select = $(this).parent().siblings('.demo-select');
+                var entrance = select.find('.animate-entrance :selected').text();
+                var closing = select.find('.animate-closing :selected').text();
+                new $.flavr({
+                    animateEntrance: "rollIn",
+                    animateClosing: "rollOut",
+                    content: '请选择一条记录',
+                    autoclose: true,
+                    timeout: 3000
+                });
+            }else{
+                $("#editOuName").val(data[0].ouName);
+                $("#editEndTime").val(data[0].endTime);
+                $("#editModal").modal("show");
+            }
+        });
+
+        $("#delete").on("click", function() {
+            var datas = $("#ouList").bootstrapTable("getSelections");
+            var ids = "";
+            var i = 0;
+            for (i = 0; i < datas.length; i++) {
+                ids += datas[i].id + ",";
+            }
+            $.ajax({
+                url: '${basePath}/ou/deleteOu?ids=' + ids,
+                method: 'post',
+                dataType: 'json',
+                complete: function(jqXHR, textStatus) {
+                    search();
+                }
+            });
+        });
+    })
 </script>
