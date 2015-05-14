@@ -158,9 +158,6 @@
             var data = $("#ouList").bootstrapTable("getSelections");
             console.info(data)
             if (data.length != 1) {
-                var select = $(this).parent().siblings('.demo-select');
-                var entrance = select.find('.animate-entrance :selected').text();
-                var closing = select.find('.animate-closing :selected').text();
                 new $.flavr({
                     animateEntrance: "rollIn",
                     animateClosing: "rollOut",
@@ -179,6 +176,16 @@
             var datas = $("#ouList").bootstrapTable("getSelections");
             var ids = "";
             var i = 0;
+            if (datas.length != 1) {
+                new $.flavr({
+                    animateEntrance: "rollIn",
+                    animateClosing: "rollOut",
+                    content: '请选择一条记录',
+                    autoclose: true,
+                    timeout: 3000
+                });
+                return;
+            }
             for (i = 0; i < datas.length; i++) {
                 ids += datas[i].id + ",";
             }
