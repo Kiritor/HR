@@ -176,7 +176,7 @@
             var datas = $("#ouList").bootstrapTable("getSelections");
             var ids = "";
             var i = 0;
-            if (datas.length != 1) {
+            if (datas.length < 1) {
                 new $.flavr({
                     animateEntrance: "rollIn",
                     animateClosing: "rollOut",
