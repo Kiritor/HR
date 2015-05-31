@@ -10,13 +10,13 @@
     </dl>
     <dl class="system_log">
         <dt >组织管理<img src="${basePath}/static/img/left/select_xl01.png"></dt>
-        <dd class="first_dd"><a href="${basePath}/ou/list">充值记录</a>
+        <dd class="first_dd"><a href="${basePath}/ou/list">组织信息</a>
         </dd>
-        <dd><a href="#">短信充值记录</a>
+        <dd><a href="#">组织类型</a>
         </dd>
-        <dd><a href="#">消费记录</a>
+        <dd><a href="#">组织类别</a>
         </dd>
-        <dd><a href="#">操作记录</a>
+        <dd><a href="#">组织地址</a>
         </dd>
     </dl>
 

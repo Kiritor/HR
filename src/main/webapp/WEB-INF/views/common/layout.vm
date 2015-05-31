@@ -26,7 +26,7 @@
 	<script src="${basePath}/static/js/flavr.js"></script>
 	<script src="${basePath}/static/js/jquery.datetimepicker.js"></script>
 	<link href="${basePath}/static/css/jquery.datetimepicker.css" rel="stylesheet">
-	
+		<script src="${basePath}/static/js/jquery.nicescroll.js"></script>
 </head>
       #parse("${header_path}")
       <div style="position:absolute">
@@ -36,6 +36,15 @@
       <div style="margin-left:161px;font-family:'微软雅黑'">
            #parse("${content_path}")
       </div>
-      
+       <script>
+        $("html").niceScroll({  
+			cursorcolor:"#eee",  
+			cursoropacitymax:1,  
+			touchbehavior:false,  
+			cursorwidth:"6px",  
+			cursorborder:"5",  
+			cursorborderradius:"5px"  
+        }); 
+    </script>
 </body>
 </html>
