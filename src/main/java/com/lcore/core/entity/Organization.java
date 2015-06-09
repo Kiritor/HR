@@ -7,12 +7,16 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name = "Organization_info")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Organization extends Root{
 	private String ouName;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date startTime;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date endTime;
 	private String addressId;
 	private String ouTypeId;

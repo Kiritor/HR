@@ -10,13 +10,16 @@ import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "T_ROOT")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Root {
 	private String id;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date createTime;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updateTime;
 	private String creater;
 	private String updater;
