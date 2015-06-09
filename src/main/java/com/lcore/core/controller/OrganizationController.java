@@ -41,12 +41,15 @@ public class OrganizationController extends ModelView{
 		return map;
 	}
 	@RequestMapping("/addOu")
-	public void addOu(HttpServletRequest request,HttpServletResponse response,
+	@ResponseBody
+	public String addOu(HttpServletRequest request,HttpServletResponse response,
 			Organization org) throws Exception{
 	    organizationService.addOu(org);
+	    return "success";
 	}
 	@RequestMapping("/deleteOu")
-	public void deleteOu(HttpServletRequest request,HttpServletResponse response,
+	@ResponseBody
+	public String deleteOu(HttpServletRequest request,HttpServletResponse response,
 			@RequestParam String ids) throws Exception{
 		String[] idA = ids.split(",");
 		List<String> idList = new ArrayList<String>();
@@ -54,5 +57,13 @@ public class OrganizationController extends ModelView{
 			idList.add(idA[i]);
 		}
         organizationService.deleteOu(idList);
+        return "success";
+	}
+	@RequestMapping("/updateOu")
+	@ResponseBody
+	public String deleteOu(HttpServletRequest request,HttpServletResponse response,
+			 Organization org) throws Exception{
+        organizationService.updateOu(org);
+        return "success";
 	}
 }

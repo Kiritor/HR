@@ -6,7 +6,6 @@ import java.util.List;
 import com.lcore.core.entity.Root;
 /**
  * 封装底层数据访问
- * HibernateTemplate
  * @author lcore
  *
  */

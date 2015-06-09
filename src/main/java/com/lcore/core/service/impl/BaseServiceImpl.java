@@ -16,7 +16,7 @@ import com.lcore.core.service.BaseService;
 public class BaseServiceImpl implements BaseService{
 
 	@Resource
-	public BaseDataMng baseDataMng;
+	private BaseDataMng baseDataMng;
 	@Override
 	public String saveObj(Root root) throws Exception {
 		return baseDataMng.saveObj(root);
