@@ -1,9 +1,10 @@
-package com.lcore.core.service;
+package com.lcore.core.menu.organization.service;
 
 import java.util.List;
 
 import com.lcore.core.entity.Organization;
 import com.lcore.core.entity.Root;
+import com.lcore.core.menu.base.service.BaseService;
 
 public interface OrganizationService extends BaseService{
 	/**
