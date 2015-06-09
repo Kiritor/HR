@@ -2,6 +2,14 @@
     <dl class="system_log" style="margin-top:40px;">
         <dt >首页概览<img src="${basePath}/static/img/left/select_xl01.png"></dt>
     </dl>
+     <a href="${basePath}/user/list">  
+    <dl class="custom">
+        <dt >
+                               用户管理
+        <img src="${basePath}/static/img/left/select_xl01.png">
+        </dt>
+    </dl>
+     </a>
     <dl class="system_log">
         <dt >组织管理<img src="${basePath}/static/img/left/select_xl01.png"></dt>
         <dd class="first_dd"><a href="${basePath}/ou/list">组织信息</a>
@@ -11,18 +19,6 @@
         <dd><a href="#">组织类别</a>
         </dd>
         <dd><a href="#">组织地址</a>
-        </dd>
-    </dl>
-
-    <dl class="custom">
-        <dt >客户管理<img src="${basePath}/static/img/left/select_xl01.png"></dt>
-        <dd class="first_dd"><a href="#">客户管理</a>
-        </dd>
-        <dd><a href="#">试用/成交客户管理</a>
-        </dd>
-        <dd><a href="#">未成交客户管理</a>
-        </dd>
-        <dd><a href="#">即将到期客户管理</a>
         </dd>
     </dl>
 
