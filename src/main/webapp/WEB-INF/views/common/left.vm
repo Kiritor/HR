@@ -1,11 +1,5 @@
 <div class="leftsidebar_box">
-    <center>
-        </br>
-        <img  src="${basePath}/static/img/a0.jpg" alt="..." class="img-circle">
-        相关简介信息
-        </br>
-    </center>
-    <dl class="system_log">
+    <dl class="system_log" style="margin-top:40px;">
         <dt >首页概览<img src="${basePath}/static/img/left/select_xl01.png"></dt>
     </dl>
     <dl class="system_log">
