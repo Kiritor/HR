@@ -34,5 +34,5 @@ function formatDatebox(value) {
 		dt = new Date(value);
 
 	}
-	return dt.format("yyyy-MM-dd"); //定义输出日期的格式
+	return dt.format("yyyy-MM-dd hh:ss"); //定义输出日期的格式
 }
