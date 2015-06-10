@@ -26,16 +26,20 @@
 	<script src="${basePath}/static/js/flavr.js"></script>
 	<script src="${basePath}/static/js/jquery.datetimepicker.js"></script>
 	<link href="${basePath}/static/css/jquery.datetimepicker.css" rel="stylesheet">
-		<script src="${basePath}/static/js/jquery.nicescroll.js"></script>
+	<script src="${basePath}/static/js/jquery.nicescroll.js"></script>
+    <script src="${basePath}/static/jcheckbox/js/jquery-labelauty.js"></script>
+    <link href="${basePath}/static/jcheckbox/css/jquery-labelauty.css" rel="stylesheet">
+     <script src="${basePath}/static/js/bt-validate.js"></script>
 </head>
       #parse("${header_path}")
       <div style="position:absolute">
            #parse("${left_path}") 
       </div>
       
-      <div style="margin-left:161px;font-family:'微软雅黑'">
-           #parse("${content_path}")
+      <div style="margin-left:161px;margin-right:6px;font-family:'微软雅黑'">
+            #parse("${content_path}")
       </div>
+       <div class="footer">版权所有:LCore 2015</div>
        <script>
         $("html").niceScroll({  
 			cursorcolor:"#eee",  
