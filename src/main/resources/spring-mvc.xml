@@ -42,6 +42,7 @@
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/ou/*" />
+			<mvc:mapping path="/user/*" />
 			<bean class="com.lcore.core.interceptor.SecurityInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
