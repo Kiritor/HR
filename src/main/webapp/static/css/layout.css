@@ -108,3 +108,17 @@ a {
 .leftsidebar_box dl dd:last-child {
 	margin-bottom: 5px;
 }
+
+/**
+   footer
+*/
+.footer {
+	position: fixed;
+	left:0px;
+	bottom:0px;
+	width:100%;
+	font-family:'microsoft yahei';
+	height:40px;
+	line-height:40px;
+	text-align:center;
+}
