@@ -20,9 +20,9 @@ public class OrganizationServiceImpl extends BaseServiceImpl implements
 	public List<Root> getOuList(int offset, int limit, String sort,
 			String order, String key) {
 		// 构造查询条件:所有字段模糊匹配
-		String condition = "";
-		if (key != null && key.equals("")) {
-			condition = " (obj.createTime like '%" + key + "%' ";
+		String condition = " 1=1 ";
+		if (key != null && !key.equals("")) {
+			condition = " and (obj.createTime like '%" + key + "%' ";
 			condition += " or obj.updateTime like '%" + key + "%' ";
 			condition += " or obj.startTime like '%" + key + "%' ";
 			condition += " or obj.endTime like '%" + key + "%' ";
