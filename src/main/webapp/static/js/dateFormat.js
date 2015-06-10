@@ -36,3 +36,10 @@ function formatDatebox(value) {
 	}
 	return dt.format("yyyy-MM-dd hh:ss"); //定义输出日期的格式
 }
+
+function formatGender(value){
+	if(value=="male")
+		return "男";
+	else
+		return "女";
+}
