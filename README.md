@@ -31,20 +31,8 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;**5. ...**
 
-# 业务模块
+# 项目进度
 
-&nbsp;&nbsp;&nbsp;&nbsp;**1. 基础模块:**系统基础模块,包括人员管理、角色管理、权限管理等
+&nbsp;&nbsp;&nbsp;&nbsp;1. 登录模块:密码密文存储、设置了拦截器(不登录返回登录界面)、登录、退出系统.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**2. 员工管理:**
-
-&nbsp;&nbsp;&nbsp;&nbsp;**3. 部门管理:**
-
-&nbsp;&nbsp;&nbsp;&nbsp;**4. 薪酬管理:**
-
-&nbsp;&nbsp;&nbsp;&nbsp;**5. 考勤管理:**
-
-&nbsp;&nbsp;&nbsp;&nbsp;**6. 绩效管理:**
-
-&nbsp;&nbsp;&nbsp;&nbsp;**7. 出差申请:**
-
-&nbsp;&nbsp;&nbsp;&nbsp;**8. ...**
+![登录界面](http://img.my.csdn.net/uploads/201506/11/1434011044_4098.png)
