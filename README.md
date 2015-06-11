@@ -4,6 +4,8 @@
 # 开发环境
 &nbsp;&nbsp;&nbsp;&nbsp;**JDK1.6 + Eclipse + MySQL + Maven**
 
+&nbsp;&nbsp;&nbsp;&nbsp;本项目作为业余研究,后端使用spring mvc进行开发,前端主要使用bootstrap也是初学,完成整个项目的过程,也是一个学习的过程,下面是项目中使用到的相关知识点:
+
 # 前端技术
 
 &nbsp;&nbsp;&nbsp;&nbsp;**1. jQuery:js库**
