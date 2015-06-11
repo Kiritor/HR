@@ -35,4 +35,4 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;1. 登录模块:密码密文存储、设置了拦截器(不登录返回登录界面)、登录、退出系统.
 
-![登录界面](http://img.my.csdn.net/uploads/201506/11/1434011044_4098.png)
+<center>![登录界面](http://img.my.csdn.net/uploads/201506/11/1434011044_4098.png)</center>
