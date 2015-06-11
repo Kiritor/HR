@@ -1,0 +1,53 @@
+<ol class="breadcrumb" style="margin-bottom:2px;">
+    <li><a href="#">首页概览</a>
+    </li>
+    <li><a href="#">框架技术介绍</a>
+    </li>
+</ol>
+<div class="container">
+<h3>前端</h3>
+<ul class="list-group">
+      <li class="list-group-item">
+	    <span class="badge">js库</span>
+	    jQuery
+	  </li>
+	  <li class="list-group-item">
+	    <span class="badge">前端框架</span>
+	    Bootstrap
+	  </li>
+	  <li class="list-group-item">
+	    <span class="badge">表格插件扩展</span>
+	    BootstrapTable
+	  </li>
+	  <li class="list-group-item">
+	    <span class="badge">界面模板引擎</span>
+	    Velocity
+	  </li>
+	   <li class="list-group-item">
+	             待续...
+	  </li>
+</ul>
+<h3>后端</h3>
+<ul class="list-group">
+      <li class="list-group-item">
+	    <span class="badge">ORM框架</span>
+	    Hibernate
+	  </li>
+	  <li class="list-group-item">
+	    <span class="badge">轻量级的IOC(控制反转)、AOP(面向切面)的容器框架</span>
+	    Spring
+	  </li>
+	  <li class="list-group-item">
+	    <span class="badge">SpringFramework MVC框架</span>
+	    Spring MVC
+	  </li>
+	  <li class="list-group-item">
+	    <span class="badge">工作流引擎</span>
+	    Activiti
+	  </li>
+	  <li class="list-group-item">
+	             待续...
+	  </li>
+</ul>
+</div>
+

@@ -1,7 +1,9 @@
 <div class="leftsidebar_box">
+    <a href="${basePath}/index">
     <dl class="system_log" style="margin-top:40px;">
         <dt >首页概览<img src="${basePath}/static/img/left/select_xl01.png"></dt>
     </dl>
+    </a>
      <a href="${basePath}/user/list">  
     <dl class="custom">
         <dt >
