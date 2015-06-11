@@ -8,6 +8,7 @@
     <script src="${basePath}/static/js/jquery.min.js"></script>
     <script src="${basePath}/static/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="/hr/static/img/favicon.ico" />
+	<script src="${basePath}/static/js/md5.min.js"></script>
 </head>
 <body class="templatemo-bg-gray">
 	<div class="container" style="margin-top:80px;">
@@ -42,7 +43,7 @@
 		        <div class="form-group">
 		          <div class="col-md-12">
 		          	<div class="control-wrapper">
-		          		<input type="submit" value="登录" class="btn btn-info">
+		          		<input type="submit" value="登录" class="btn btn-info" onclick="md5_password()">
 		          		<a href="forgot-password.html" class="text-right pull-right">忘记密码?</a>
 		          	</div>
 		          </div>
@@ -66,5 +67,11 @@
 		      </div>
 		</div>
 	</div>
+	<script>
+	    function md5_password(){
+		   var password = $("#password").val();
+		   $("#password").val(md5(password));
+		}
+	</script>
 </body>
 </html>

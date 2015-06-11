@@ -35,13 +35,14 @@
                 $(':input[name=updateGender]').labelauty();
                 var data = $("#userList").bootstrapTable("getSelections")[0];
                 $("#updateUserName").val(data.userName);
-                $("#updateUserPassword").val(data.password);
+                //$("#updateUserPassword").val('');
                 var gender = data.gender;
                 //根据value值设置radio选中项
                 $("input:radio[value="+gender+"]").attr('checked','true');
                 $("#updateUser").on("click", function() {
                     data.userName = $("#updateUserName").val();
-                    data.password = $("#updateUserPassword").val();
+                    //加密
+                    data.password = md5($("#updateUserPassword").val());
                     data.gender = $("input[name='updateGender']:checked").val();
                     $.ajax({
                         url: '${basePath}/user/updateUser',

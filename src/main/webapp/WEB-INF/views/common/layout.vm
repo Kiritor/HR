@@ -29,7 +29,8 @@
 	<script src="${basePath}/static/js/jquery.nicescroll.js"></script>
     <script src="${basePath}/static/jcheckbox/js/jquery-labelauty.js"></script>
     <link href="${basePath}/static/jcheckbox/css/jquery-labelauty.css" rel="stylesheet">
-     <script src="${basePath}/static/js/bt-validate.js"></script>
+    <script src="${basePath}/static/js/bt-validate.js"></script>
+    <script src="${basePath}/static/js/md5.min.js"></script>
 </head>
       #parse("${header_path}")
       <div style="position:absolute">
