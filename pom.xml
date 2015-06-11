@@ -29,7 +29,7 @@
 		</plugins>
 	</build>
 	<dependencies>
-	    <!-- spring-mvc -->
+		<!-- spring-mvc -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -61,7 +61,7 @@
 			<artifactId>spring-mock</artifactId>
 			<version>2.0.8</version>
 		</dependency>
-		
+
 		<!-- hibernate -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -83,7 +83,7 @@
 			<artifactId>hibernate-annotations</artifactId>
 			<version>3.5.6-Final</version>
 		</dependency>
-		
+
 		<!-- velocity -->
 		<dependency>
 			<groupId>org.apache.velocity</groupId>
@@ -101,7 +101,7 @@
 			<artifactId>jersey-server</artifactId>
 			<version>1.17</version>
 		</dependency>
-		
+
 		<!-- rest webservice -->
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
@@ -124,21 +124,19 @@
 			<artifactId>activiti-engine</artifactId>
 			<version>5.15.1</version>
 		</dependency>
-		
+
 		<!-- spring junit -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>3.1.2.RELEASE</version>
-			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.8.2</version>
-			<scope>test</scope>
+			<version>4.10</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
@@ -184,6 +182,21 @@
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>1.9.8</version>
 		</dependency>
+		<dependency>  
+            <groupId>com.fasterxml.jackson.core</groupId>  
+            <artifactId>jackson-core</artifactId>  
+            <version>2.1.0</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>com.fasterxml.jackson.core</groupId>  
+            <artifactId>jackson-databind</artifactId>  
+            <version>2.1.0</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>com.fasterxml.jackson.core</groupId>  
+            <artifactId>jackson-annotations</artifactId>  
+            <version>2.1.0</version>  
+        </dependency> 
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
@@ -194,6 +207,13 @@
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.2.2</version>
+		</dependency>
+
+		<!-- date -->
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.8</version>
 		</dependency>
 	</dependencies>
 </project>
