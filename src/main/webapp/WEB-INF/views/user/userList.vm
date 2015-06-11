@@ -21,7 +21,7 @@
     <button class="btn btn-default" id="add" data-backdrop="false" data-url="${basePath}/user/addUserView" href="#addUserModal" data-toggle="modal">
         <i class="glyphicon glyphicon-plus"></i>
     </button>
-   <button class="btn btn-default" id="edit" data-backdrop="false" data-url="${basePath}/user/updateUserView" href="#updateUserModal" data-toggle="modal">
+    <button class="btn btn-default" id="edit" data-backdrop="false" data-url="${basePath}/user/updateUserView" href="#updateUserModal" data-toggle="modal">
         <i class="glyphicon glyphicon-edit"></i>
     </button>
     <button type="button" class="btn btn-default" id="delete">

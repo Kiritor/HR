@@ -1,0 +1,49 @@
+<div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header text-left">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">添加组织</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="addOuName">组织名称</label>
+                        <input type="text" class="form-control" id="addOuName">
+                    </div>
+                    <div class="form-group">
+                        <label for="addEndTime">失效日期</label>
+                        <div class="input-group">
+                            <input type="time" class="form-control" id="addEndTime">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-success" id="addOu">添加</button>
+            </div>
+        </div>
+</div>
+<script>
+    $(function(){
+         $("#addEndTime").datetimepicker();
+         $("#addOu").on("click", function() {
+            var obj = new Object();
+            obj.ouName = $("#addOuName").val();
+            obj.endTime = $("#addEndTime").val();
+            $.ajax({
+                url: '${basePath}/ou/addOu',
+                data: obj,
+                method: 'post',
+                dataType: 'json',
+                complete: function(jqXHR, textStatus) {
+                    $("#addOuModal").modal("hide");
+                    search();
+                }
+            });
+        });
+    });
+</script>

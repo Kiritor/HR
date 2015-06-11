@@ -6,69 +6,8 @@
     <li class="active">基本信息</li>
 </ol>
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">添加组织</h4>
-            </div>
-            <div class="modal-body">
-                <form class="form-inline">
-                    <div class="form-group">
-                        <label for="addOuName">组织名称</label>
-                        <input type="text" class="form-control" id="addOuName">
-                    </div>
-                    <div class="form-group">
-                        <label for="addEndTime">失效日期</label>
-                        <div class="input-group">
-                            <input type="time" class="form-control" id="addEndTime">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-                        </div>
-
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-success" id="addOu">添加</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">更新组织</h4>
-            </div>
-            <div class="modal-body">
-                <form class="form-inline">
-                    <div class="form-group">
-                        <label for="">组织名称</label>
-                        <input type="text" class="form-control" id="editOuName">
-                        <input type="hidden" class="form-control" id="editId">
-                    </div>
-                    <div class="form-group">
-                        <label for="">失效日期</label>
-                        <div class="input-group">
-                            <input type="time" class="form-control" id="editEndTime">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-                        </div>
-
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-success" id="editOu">确定</button>
-            </div>
-        </div>
-    </div>
-</div>
+<div class="modal fade text-center" id="addOuModal"></div>
+<div class="modal fade text-center" id="updateOuModal"></div>
 <div id="toolbar" class="btn-group">
     <input class="form-" type="text" placeholder="搜索" style="float:left" id="searchBox" />
     <button type="button" class="btn btn-default" id="search" style="margin-left:5px;">
@@ -77,17 +16,17 @@
     <button type="button" class="btn btn-default" id="save">
         <i class="glyphicon glyphicon-floppy-save"></i>
     </button>
-    <button class="btn btn-default" id="add" data-toggle="modal" data-target="#myModal">
+    <button class="btn btn-default" id="add" data-backdrop="false" data-url="${basePath}/ou/addOuView" href="#addOuModal" data-toggle="modal">
         <i class="glyphicon glyphicon-plus"></i>
     </button>
-    <button type="button" class="btn btn-default" id="edit">
+    <button class="btn btn-default" id="edit" data-backdrop="false" data-url="${basePath}/ou/updateOuView" href="#updateOuModal" data-toggle="modal">
         <i class="glyphicon glyphicon-edit"></i>
     </button>
     <button type="button" class="btn btn-default" id="delete">
         <i class="glyphicon glyphicon-remove-circle"></i>
     </button>
 </div>
-<table id="ouList" data-toggle="table" data-url="${basePath}/ou/getOuList?search" data-sort-name="ouName" data-sort-order="desc" data-show-header="true" data-show-refresh="true" data-show-columns="true" data-pagination="true" data-side-pagination="server" data-page-list="[5,10]" data-height="535" data-show-export="true" data-toolbar="#toolbar" data-show-paginationSwitch="true" data-pagination-detail-h-align="left" data-pagination-h-align="right" data-click-to-select="true">
+<table id="ouList" data-toggle="table" data-url="${basePath}/ou/getOuList?search" data-sort-name="ouName" data-sort-order="desc" data-show-header="true" data-show-refresh="true" data-show-columns="true" data-pagination="true" data-side-pagination="server" data-page-list="[5,10]" data-height="520" data-show-export="true" data-toolbar="#toolbar" data-show-paginationSwitch="true" data-pagination-detail-h-align="left" data-pagination-h-align="right" data-click-to-select="true">
     <thead>
         <tr>
             <th data-field="state" data-checkbox="true"></th>
@@ -108,15 +47,6 @@
         $("#search").on("click", function() {
             search();
         });
-        $("#myModal").on("show.bs.modal", function() {
-            $("#addOuName").val("");
-            $("#addEndTime").val("");
-            $(this).find('.modal-dialog').css({
-                'width': function() {
-
-                }
-            });
-        })
         function search() {
             var $table = $("#ouList");
             var searchText = $("#searchBox").val();
@@ -135,28 +65,19 @@
             $(this).bootstrapTable("getOptions").pageNumber = 1; //默认排序从第一页开始
             console.info($(this).bootstrapTable("getOptions"))
         });
-
-        $("#addEndTime").datetimepicker();
-        $("#editEndTime").datetimepicker();
-        $("#addOu").on("click", function() {
-            var obj = new Object();
-            obj.ouName = $("#addOuName").val();
-            obj.endTime = $("#addEndTime").val();
-            $.ajax({
-                url: '${basePath}/ou/addOu',
-                data: obj,
-                method: 'post',
-                dataType: 'json',
-                complete: function(jqXHR, textStatus) {
-                    $("#myModal").modal("hide");
-                    search();
-                }
-            });
+        
+        //添加组织
+        $("#add").on("click",function(){
+		    $("#addOuModal").load($(this).attr("data-url"));
+		    $('#addOuModal').on('hidden.bs.modal', function (e) {
+			  search();
+			})
         });
 
+        //更新用户
         $("#edit").on("click", function() {
             var data = $("#ouList").bootstrapTable("getSelections");
-            if (data.length != 1) {
+            if (data.length > 1||data.length<1) {
                 new $.flavr({
                     animateEntrance: "rollIn",
                     animateClosing: "rollOut",
@@ -164,29 +85,16 @@
                     autoclose: true,
                     timeout: 3000
                 });
+                $('#updateOuModal').modal({backdrop:false});//去掉蒙板
+                return;
             }else{
-                $("#editOuName").val(data[0].ouName);
-                $("#editEndTime").val(data[0].endTime);
-                $("#editModal").modal("show");
+                $("#updateOuModal").load($(this).attr("data-url"));
+			    $('#updateOuModal').on('hidden.bs.modal', function (e) {
+				   search();
+				});
             }
         });
         
-        $("#editOu").on("click",function(){
-           var obj = $("#ouList").bootstrapTable("getSelections")[0];
-           obj.ouName = $("#editOuName").val();
-           obj.endTime = $("#editEndTime").val();
-           $.ajax({
-                url: '${basePath}/ou/updateOu',
-                method: 'post',
-                dataType: 'json',
-                data:obj,
-                complete: function(jqXHR, textStatus) {
-                    $("#editModal").modal("hide");
-                    search();
-                }
-           });
-        });
-
         $("#delete").on("click", function() {
             var datas = $("#ouList").bootstrapTable("getSelections");
             var ids = "";
@@ -204,6 +112,7 @@
             for (i = 0; i < datas.length; i++) {
                 ids += datas[i].id + ",";
             }
+            
             $.ajax({
                 url: '${basePath}/ou/deleteOu?ids=' + ids,
                 method: 'post',

@@ -1,0 +1,58 @@
+<div class="modal-dialog">
+        <div class="modal-content text-left">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">更新组织</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label for="">组织名称</label>
+                        <input type="text" class="form-control" id="editOuName">
+                        <input type="hidden" class="form-control" id="editId">
+                    </div>
+                    <div class="form-group">
+                        <label for="">失效日期</label>
+                        <div class="input-group">
+                            <input type="time" class="form-control" id="editEndTime">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-success" id="editOu">确定</button>
+            </div>
+        </div>
+ </div>
+ 
+ <script>
+      $(function(){
+         
+         $("#editEndTime").datetimepicker();
+         var data = $("#ouList").bootstrapTable("getSelections")[0];
+         $("#editEndTime").val(data.endTime);
+         $("#editOuName").val(data.ouName);
+         $("#editOu").on("click",function(){
+           var obj = $("#ouList").bootstrapTable("getSelections")[0];
+           obj.ouName = $("#editOuName").val();
+           obj.endTime = $("#editEndTime").val();
+           $.ajax({
+                url: '${basePath}/ou/updateOu',
+                method: 'post',
+                dataType: 'json',
+                data:obj,
+                complete: function(jqXHR, textStatus) {
+                    $("#updateOuModal").modal("hide");
+                    search();
+                }
+           });
+        });
+         
+      });
+ </script>
+   
+  
