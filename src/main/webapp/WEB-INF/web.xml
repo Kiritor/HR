@@ -8,6 +8,7 @@
 		<welcome-file>index.vm</welcome-file>
 	</welcome-file-list>
 
+
 	<!-- 加载所有的配置文件 这里我将配置文件置于源码包中 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
