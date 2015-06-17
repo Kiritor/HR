@@ -18,17 +18,17 @@
     <button type="button" class="btn btn-default" id="save">
         <i class="glyphicon glyphicon-floppy-save"></i>
     </button>
-    <button class="btn btn-default" id="add" data-backdrop="false" data-url="${basePath}/user/addUserView" href="#addUserModal" data-toggle="modal">
+    <button class="btn btn-default" id="add" data-backdrop="false" data-url="${basePath}/auth/user/addUserView" href="#addUserModal" data-toggle="modal">
         <i class="glyphicon glyphicon-plus"></i>
     </button>
-    <button class="btn btn-default" id="edit" data-backdrop="false" data-url="${basePath}/user/updateUserView" href="#updateUserModal" data-toggle="modal">
+    <button class="btn btn-default" id="edit" data-backdrop="false" data-url="${basePath}/auth/user/updateUserView" href="#updateUserModal" data-toggle="modal">
         <i class="glyphicon glyphicon-edit"></i>
     </button>
     <button type="button" class="btn btn-default" id="delete">
         <i class="glyphicon glyphicon-remove-circle"></i>
     </button>
 </div>
-<table id="userList" data-toggle="table" data-url="${basePath}/user/getUserList?search" data-sort-name="userName" data-sort-order="desc" data-show-header="true" data-show-refresh="true" data-show-columns="true" data-pagination="true" data-side-pagination="server" data-page-list="[10,20]" data-height="520" data-show-export="true" data-toolbar="#toolbar" data-show-paginationSwitch="true" data-pagination-detail-h-align="left" data-pagination-h-align="right" data-click-to-select="true">
+<table id="userList" data-toggle="table" data-url="${basePath}/auth/user/getUserList?search" data-sort-name="userName" data-sort-order="desc" data-show-header="true" data-show-refresh="true" data-show-columns="true" data-pagination="true" data-side-pagination="server" data-page-list="[10,20]" data-height="520" data-show-export="true" data-toolbar="#toolbar" data-show-paginationSwitch="true" data-pagination-detail-h-align="left" data-pagination-h-align="right" data-click-to-select="true">
     <thead>
         <tr>
             <th data-field="state" data-checkbox="true"></th>
@@ -36,10 +36,10 @@
             <th data-field="userName" data-sortable="true" data-editable="false">用户名</th>
             <th data-field="password" data-sortable="false">密码</th>
             <th data-field="gender" data-sortable="true" data-formatter="formatGender">性别</th>
-            <th data-field="createTime" data-sortable="true" >创建日期</th>
-            <th data-field="updateTime" data-sortable="true">更新日期</th>
             <th data-field="creater" data-sortable="true">创建人</th>
+            <th data-field="createTime" data-sortable="true" >创建日期</th>
             <th data-field="updater" data-sortable="true">更新人</th>
+            <th data-field="updateTime" data-sortable="true">更新日期</th>
         </tr>
     </thead>
 </table>
@@ -55,7 +55,7 @@
         function search() {
             var $table = $("#userList");
             var searchText = $("#searchBox").val();
-            $.post("${basePath}/user/getUserList", {
+            $.post("${basePath}/auth/user/getUserList", {
                 search: searchText,
                 limit: 10,
                 offset: 0,
@@ -119,7 +119,7 @@
                 ids += datas[i].id + ",";
             }
             $.ajax({
-                url: '${basePath}/user/deleteUser?ids=' + ids,
+                url: '${basePath}/auth/user/deleteUser?ids=' + ids,
                 method: 'post',
                 dataType: 'json',
                 complete: function(jqXHR, textStatus) {

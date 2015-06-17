@@ -10,7 +10,7 @@
 	http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 
 	<!-- 注解扫描包 -->
-	<context:component-scan base-package="com.lcore.core.menu.*.controller" />
+	<context:component-scan base-package="com.lcore.hr.menu.*.controller" />
 	<!-- 启动spring mvc的注解功能，完成请求和注解POJO的映射 -->
 	<bean
 		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
@@ -41,9 +41,10 @@
 	<mvc:resources mapping="/static/**" location="/static/" />
 	<mvc:interceptors>
 		<mvc:interceptor>
+		    <mvc:mapping path="/index" />
 			<mvc:mapping path="/ou/*" />
-			<mvc:mapping path="/user/*" />
-			<bean class="com.lcore.core.interceptor.SecurityInterceptor" />
+			<mvc:mapping path="/auth/*/*" />
+			<bean class="com.lcore.hr.interceptor.SecurityInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
 	<!-- 定义视图解析器 -->

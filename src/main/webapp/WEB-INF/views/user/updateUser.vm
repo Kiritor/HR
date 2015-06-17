@@ -45,7 +45,7 @@
                     data.password = md5($("#updateUserPassword").val());
                     data.gender = $("input[name='updateGender']:checked").val();
                     $.ajax({
-                        url: '${basePath}/user/updateUser',
+                        url: '${basePath}/auth/user/updateUser',
                         data: data,
                         method: 'post',
                         dataType: 'json',

@@ -4,7 +4,7 @@
     <li><a href="#">框架技术介绍</a>
     </li>
 </ol>
-<div class="container">
+<div style="margin-left:20px;margin-right:10px;">
 <h3>前端</h3>
 <ul class="list-group">
       <li class="list-group-item">

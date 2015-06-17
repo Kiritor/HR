@@ -21,7 +21,7 @@
 
 	<!-- -->
 	<listener>
-		<listener-class>com.lcore.core.module.listener.StartupListener</listener-class>
+		<listener-class>com.lcore.hr.module.listener.StartupListener</listener-class>
 	</listener>
 	<!-- 配置SpringMVC -->
 	<servlet>

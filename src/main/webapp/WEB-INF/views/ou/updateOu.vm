@@ -47,7 +47,6 @@
                 data:obj,
                 complete: function(jqXHR, textStatus) {
                     $("#updateOuModal").modal("hide");
-                    search();
                 }
            });
         });

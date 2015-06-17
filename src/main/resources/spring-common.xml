@@ -8,10 +8,10 @@
 
 
       
-    <bean id="springContextHelper" class="com.lcore.core.utils.SpringFactory">
+    <bean id="springContextHelper" class="com.lcore.hr.core.utils.SpringFactory">
     </bean>  
 	<context:property-placeholder location="classpath:jdbc.properties" />
-	<context:component-scan base-package="com.lcore.core" />
+	<context:component-scan base-package="com.lcore.hr" />
 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		p:driverClassName="${jdbc.driver}" p:url="${jdbc.url}" p:username="${jdbc.username}"
@@ -31,7 +31,8 @@
 		</property>
 		<property name="packagesToScan">
 			<list>
-				<value>com.lcore.core.entity</value>
+				<value>com.lcore.hr.core.entity</value>
+				<value>com.lcore.hr.entity</value>
 			</list>
 		</property>
 	</bean>
