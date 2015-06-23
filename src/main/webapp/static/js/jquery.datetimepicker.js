@@ -4,7 +4,7 @@
  * (c) 2014, Chupurnov Valeriy.
  */
 (function($) {
-    'use strict'
+    //'use strict'
     var default_options = {
         i18n: {
             ru: { // Russian
