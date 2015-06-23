@@ -9,7 +9,7 @@
 
 <!-- Modal -->
 <div class="modal fade text-center" id="addRoleModal"></div>
-<div class="modal fade text-center" id="updateUserModal"></div>
+<div class="modal fade text-center" id="updateRoleModal"></div>
 <div id="toolbar" class="btn-group">
     <input class="form-" type="text" placeholder="搜索" style="float:left" id="searchBox" />
     <button type="button" class="btn btn-default" id="search" style="margin-left:5px;">
@@ -21,14 +21,14 @@
     <button class="btn btn-default" id="add" data-backdrop="false" data-url="${basePath}/auth/role/addRoleView" href="#addRoleModal" data-toggle="modal">
         <i class="glyphicon glyphicon-plus"></i>
     </button>
-    <button class="btn btn-default" id="edit" data-backdrop="false" data-url="${basePath}/auth/role/updateRoleView" href="#updateUserModal" data-toggle="modal">
+    <button class="btn btn-default" id="edit" data-backdrop="false" data-url="${basePath}/auth/role/updateRoleView" href="#updateRoleModal" data-toggle="modal">
         <i class="glyphicon glyphicon-edit"></i>
     </button>
     <button type="button" class="btn btn-default" id="delete">
         <i class="glyphicon glyphicon-remove-circle"></i>
     </button>
 </div>
-<table id="userList" data-toggle="table" data-url="${basePath}/auth/role/getRoleList?search" data-sort-name="name" data-sort-order="desc" data-show-header="true" data-show-refresh="true" data-show-columns="true" data-pagination="true" data-side-pagination="server" data-page-list="[10,20]" data-height="520" data-show-export="true" data-toolbar="#toolbar" data-show-paginationSwitch="true" data-pagination-detail-h-align="left" data-pagination-h-align="right" data-click-to-select="true">
+<table id="roleList" data-toggle="table" data-url="${basePath}/auth/role/getRoleList?search" data-sort-name="name" data-sort-order="desc" data-show-header="true" data-show-refresh="true" data-show-columns="true" data-pagination="true" data-side-pagination="server" data-page-list="[10,20]" data-height="520" data-show-export="true" data-toolbar="#toolbar" data-show-paginationSwitch="true" data-pagination-detail-h-align="left" data-pagination-h-align="right" data-click-to-select="true">
     <thead>
         <tr>
             <th data-field="state" data-checkbox="true"></th>
@@ -52,7 +52,7 @@
         });
         
         function search() {
-            var $table = $("#userList");
+            var $table = $("#roleList");
             var searchText = $("#searchBox").val();
             $.post("${basePath}/auth/role/getRoleList", {
                 search: searchText,
@@ -80,7 +80,7 @@
         
         //更新角色
         $("#edit").on("click", function() {
-            var data = $("#userList").bootstrapTable("getSelections");
+            var data = $("#roleList").bootstrapTable("getSelections");
             if (data.length > 1||data.length<1) {
                 new $.flavr({
                     animateEntrance: "rollIn",
@@ -89,11 +89,11 @@
                     autoclose: true,
                     timeout: 3000
                 });
-                $('#updateUserModal').modal({backdrop:false});//去掉蒙板
+                $('#updateRoleModal').modal({backdrop:false});//去掉蒙板
                 return;
             }else{
-                $("#updateUserModal").load($(this).attr("data-url"));
-			    $('#updateUserModal').on('hidden.bs.modal', function (e) {
+                $("#updateRoleModal").load($(this).attr("data-url"));
+			    $('#updateRoleModal').on('hidden.bs.modal', function (e) {
 				   search();
 				});
             }
@@ -101,7 +101,7 @@
         
         //删除角色
         $("#delete").on("click", function() {
-            var datas = $("#userList").bootstrapTable("getSelections");
+            var datas = $("#roleList").bootstrapTable("getSelections");
             var ids = "";
             var i = 0;
             if (datas.length < 1) {

@@ -35,5 +35,5 @@ public interface RoleService {
      * @param org
      * @throws Exception
      */
-    public abstract void updateUser(Role role) throws Exception;
+    public abstract void updateRole(Role role) throws Exception;
 }

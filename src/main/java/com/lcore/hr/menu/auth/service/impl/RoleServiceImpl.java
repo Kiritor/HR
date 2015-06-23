@@ -31,20 +31,20 @@ public class RoleServiceImpl extends BaseServiceImpl implements RoleService{
 
 	@Override
 	public void addRole(Role role) throws Exception {
-		// TODO Auto-generated method stub
-		
+		this.saveObj(role);
 	}
 
 	@Override
 	public void deleteRole(List<String> ids) throws Exception {
-		// TODO Auto-generated method stub
-		
+		for (String id : ids) {
+			if (id != null && !"".equals(id.trim()))
+				this.deleteObj(Role.class.getName(), id);
+		}
 	}
 
 	@Override
-	public void updateUser(Role role) throws Exception {
-		// TODO Auto-generated method stub
-		
+	public void updateRole(Role role) throws Exception {
+		this.updateObj(role);
 	}
 
 	
