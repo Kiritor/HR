@@ -1,0 +1,60 @@
+   <div class="modal-dialog" style="display: inline-block; width: auto;">
+            <div class="modal-content">
+                <div class="modal-header text-left">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="updateUserModalLabel">添加用户</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label for="updateUserName">用户名</label>
+                            <input type="text" class="form-control" id="updateUserName" btvd-type="mail" btvd-class='btvdclass' btvd-err="data-邮箱格式不正确！">
+                        </div>
+                        <div class="form-group">
+                            <label for="updateUserPassword">密码</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="updateUserPassword">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="radio" name="updateGender" data-labelauty="男" value="male" checked="checked">
+                            <input type="radio" name="updateGender" data-labelauty="女" value="female">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+                    <button type="submit" class="btn btn-success" id="updateUser">确定</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $(function() {
+                $(':input[name=updateGender]').labelauty();
+                var data = $("#userList").bootstrapTable("getSelections")[0];
+                $("#updateUserName").val(data.userName);
+                //$("#updateUserPassword").val('');
+                var gender = data.gender;
+                //根据value值设置radio选中项
+                $("input:radio[value="+gender+"]").attr('checked','true');
+                $("#updateUser").on("click", function() {
+                    data.userName = $("#updateUserName").val();
+                    //加密
+                    data.password = md5($("#updateUserPassword").val());
+                    data.gender = $("input[name='updateGender']:checked").val();
+                    $.ajax({
+                        url: '${basePath}/auth/user/updateUser',
+                        data: data,
+                        method: 'post',
+                        dataType: 'json',
+                        complete: function(jqXHR, textStatus) {
+                            $("#updateUserName").val("");
+                            $("#updateUserPassword").val("");
+                            $("#updateUserModal").modal("hide");
+                        }
+                    });
+                });
+            });
+        </script>

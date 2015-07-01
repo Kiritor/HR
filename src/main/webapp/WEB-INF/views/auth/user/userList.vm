@@ -1,0 +1,131 @@
+<ol class="breadcrumb" style="margin-bottom:2px;">
+    <li><a href="#">首页</a>
+    </li>
+    <li><a href="#">用户管理</a>
+    </li>
+    
+
+</ol>
+
+<!-- Modal -->
+<div class="modal fade text-center" id="addUserModal"></div>
+<div class="modal fade text-center" id="updateUserModal"></div>
+<div id="toolbar" class="btn-group">
+    <input class="form-" type="text" placeholder="搜索" style="float:left" id="searchBox" />
+    <button type="button" class="btn btn-default" id="search" style="margin-left:5px;">
+        <i class="glyphicon glyphicon-search"></i>
+    </button>
+    <button type="button" class="btn btn-default" id="save">
+        <i class="glyphicon glyphicon-floppy-save"></i>
+    </button>
+    <button class="btn btn-default" id="add" data-backdrop="false" data-url="${basePath}/auth/user/addUserView" href="#addUserModal" data-toggle="modal">
+        <i class="glyphicon glyphicon-plus"></i>
+    </button>
+    <button class="btn btn-default" id="edit" data-backdrop="false" data-url="${basePath}/auth/user/updateUserView" href="#updateUserModal" data-toggle="modal">
+        <i class="glyphicon glyphicon-edit"></i>
+    </button>
+    <button type="button" class="btn btn-default" id="delete">
+        <i class="glyphicon glyphicon-remove-circle"></i>
+    </button>
+</div>
+<table id="userList" data-toggle="table" data-url="${basePath}/auth/user/getUserList?search" data-sort-name="userName" data-sort-order="desc" data-show-header="true" data-show-refresh="true" data-show-columns="true" data-pagination="true" data-side-pagination="server" data-page-list="[10,20]" data-height="520" data-show-export="true" data-toolbar="#toolbar" data-show-paginationSwitch="true" data-pagination-detail-h-align="left" data-pagination-h-align="right" data-click-to-select="true">
+    <thead>
+        <tr>
+            <th data-field="state" data-checkbox="true"></th>
+            <th data-field="id" data-visible="false">id</th>
+            <th data-field="userName" data-sortable="true" data-editable="false">用户名</th>
+            <th data-field="password" data-sortable="false">密码</th>
+            <th data-field="gender" data-sortable="true" data-formatter="formatGender">性别</th>
+            <th data-field="creater" data-sortable="true">创建人</th>
+            <th data-field="createTime" data-sortable="true" >创建日期</th>
+            <th data-field="updater" data-sortable="true">更新人</th>
+            <th data-field="updateTime" data-sortable="true">更新日期</th>
+        </tr>
+    </thead>
+</table>
+
+<script>
+    $(function() {
+    
+        //搜索事件
+        $("#search").on("click", function() {
+            search();
+        });
+        
+        function search() {
+            var $table = $("#userList");
+            var searchText = $("#searchBox").val();
+            $.post("${basePath}/auth/user/getUserList", {
+                search: searchText,
+                limit: 10,
+                offset: 0,
+                order: "desc",
+                sort: 'userName'
+            }, function(res) {
+                $table.bootstrapTable("getOptions").pageNumber = 1; //默认排序从第一页开始
+                $table.bootstrapTable('load', res);
+            });
+        }
+        //排序事件
+        $("#userList").on('sort.bs.table', function(name, order) {
+            $(this).bootstrapTable("getOptions").pageNumber = 1; //默认排序从第一页开始
+        });
+
+        //添加用户
+        $("#add").on("click",function(){
+		    $("#addUserModal").load($(this).attr("data-url"));
+		    $('#addUserModal').on('hidden.bs.modal', function (e) {
+			  search();
+			})
+        });
+        
+        //更新用户
+        $("#edit").on("click", function() {
+            var data = $("#userList").bootstrapTable("getSelections");
+            if (data.length > 1||data.length<1) {
+                new $.flavr({
+                    animateEntrance: "rollIn",
+                    animateClosing: "rollOut",
+                    content: '请选择一条记录',
+                    autoclose: true,
+                    timeout: 3000
+                });
+                $('#updateUserModal').modal({backdrop:false});//去掉蒙板
+                return;
+            }else{
+                $("#updateUserModal").load($(this).attr("data-url"));
+			    $('#updateUserModal').on('hidden.bs.modal', function (e) {
+				   search();
+				});
+            }
+        });
+        
+        //删除用户
+        $("#delete").on("click", function() {
+            var datas = $("#userList").bootstrapTable("getSelections");
+            var ids = "";
+            var i = 0;
+            if (datas.length < 1) {
+                new $.flavr({
+                    animateEntrance: "rollIn",
+                    animateClosing: "rollOut",
+                    content: '请选择一条记录',
+                    autoclose: true,
+                    timeout: 3000
+                });
+                return;
+            }
+            for (i = 0; i < datas.length; i++) {
+                ids += datas[i].id + ",";
+            }
+            $.ajax({
+                url: '${basePath}/auth/user/deleteUser?ids=' + ids,
+                method: 'post',
+                dataType: 'json',
+                complete: function(jqXHR, textStatus) {
+                    search();
+                }
+            });
+        });
+    })
+</script>
