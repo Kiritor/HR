@@ -10,7 +10,7 @@
         </dd>
         <dd><a href="${basePath}/auth/role/list">角色管理</a>
         </dd>
-        <dd><a href="#">角色分配</a>
+        <dd><a href="${basePath}/auth/role/list">角色分配</a>
         </dd>
         <dd><a href="#">模块管理</a>
         </dd>

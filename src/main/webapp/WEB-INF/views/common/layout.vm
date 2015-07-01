@@ -31,6 +31,8 @@
     <link href="${basePath}/static/jcheckbox/css/jquery-labelauty.css" rel="stylesheet">
     <script src="${basePath}/static/js/bt-validate.js"></script>
     <script src="${basePath}/static/js/md5.min.js"></script>
+    <link href="${basePath}/static/z-tree/css/metro.css" rel="stylesheet">
+    <script src="${basePath}/static/z-tree/jquery.ztree.all-3.5.min.js"></script>
 </head>
       #parse("${header_path}")
       <div style="position:absolute">
