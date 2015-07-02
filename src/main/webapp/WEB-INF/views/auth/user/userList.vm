@@ -11,7 +11,7 @@
 <div class="modal fade text-center" id="addUserModal"></div>
 <div class="modal fade text-center" id="updateUserModal"></div>
 <div id="toolbar" class="btn-group">
-    <input class="form-" type="text" placeholder="搜索" style="float:left" id="searchBox" />
+    <input class="form-" type="text" placeholder="用户名" style="float:left" id="searchBox" />
     <button type="button" class="btn btn-default" id="search" style="margin-left:5px;">
         <i class="glyphicon glyphicon-search"></i>
     </button>
