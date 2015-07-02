@@ -6,11 +6,11 @@
     </a>
     <dl class="custom">
         <dt >权限管理<img src="${basePath}/static/img/left/select_xl01.png"></dt>
-        <dd class="first_dd"><a href="${basePath}/auth/user/list">用户管理</a>
+        <dd class="first_dd"><a href="${basePath}/auth/role/list">角色管理</a>
         </dd>
-        <dd><a href="${basePath}/auth/role/list">角色管理</a>
+        <dd ><a href="${basePath}/auth/user/list">用户管理</a>
         </dd>
-        <dd><a href="${basePath}/auth/role/list">角色分配</a>
+        <dd><a href="${basePath}/auth/role/roleAllocationView">角色分配</a>
         </dd>
         <dd><a href="#">模块管理</a>
         </dd>
