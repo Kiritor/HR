@@ -17,7 +17,6 @@ public class User extends Root {
 	private String userName;
 	private String password;
 	private String gender;
-	private String roleId;
 
 	public String getUserName() {
 		return userName;
@@ -41,14 +40,6 @@ public class User extends Root {
 
 	public void setGender(String gender) {
 		this.gender = gender;
-	}
-
-	public String getRoleId() {
-		return roleId;
-	}
-
-	public void setRoleId(String roleId) {
-		this.roleId = roleId;
 	}
 
 }
