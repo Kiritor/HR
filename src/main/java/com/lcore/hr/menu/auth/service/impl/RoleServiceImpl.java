@@ -1,11 +1,13 @@
 package com.lcore.hr.menu.auth.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.lcore.hr.core.entity.Role;
+import com.lcore.hr.core.entity.RoleToUserRel;
 import com.lcore.hr.core.entity.Root;
 import com.lcore.hr.core.entity.User;
 import com.lcore.hr.menu.auth.service.RoleService;
@@ -45,6 +47,45 @@ public class RoleServiceImpl extends BaseServiceImpl implements RoleService{
 	@Override
 	public void updateRole(Role role) throws Exception {
 		this.updateObj(role);
+	}
+
+	@Override
+	public List<String> getUserIdsByRoleId(String roleId) throws Exception {
+	    String condition = " 1=1 ";
+	    if(roleId == null ||roleId.trim().equals("")){
+	    	return null;
+	    }
+	    condition += " and obj.roleId = '"+roleId+"'";
+	    List<Root> list = this.getObjListByCondition(RoleToUserRel.class.getSimpleName(), condition);
+	    List<String> resultList = new ArrayList<String>();
+	    for(Root root:list){
+	    	RoleToUserRel rel = (RoleToUserRel) root;
+	    	resultList.add(rel.getUserId());
+	    }
+		return resultList;
+	}
+
+	@Override
+	public void updateRoleToUserRel(String roleId, String[] userIds)
+			throws Exception {
+		//1、删除以前的关系
+		deleteUserIdsByRoleId(roleId);
+		//2、批量添加关系
+		for(String str:userIds){
+			RoleToUserRel tmp = new RoleToUserRel();
+			tmp.setRoleId(roleId);
+			tmp.setUserId(str);
+			this.saveObj(tmp);
+		}
+		
+	}
+
+	@Override
+	public void deleteUserIdsByRoleId(String roleId) throws Exception {
+		List<Root> roots = this.getObjListByCondition(RoleToUserRel.class.getSimpleName(), " obj.roleId ='"+roleId+"'");
+		for(Root root:roots){
+			this.deleteObj(RoleToUserRel.class.getName(), root.getId());
+		}
 	}
 
 	

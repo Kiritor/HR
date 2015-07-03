@@ -36,4 +36,27 @@ public interface RoleService {
      * @throws Exception
      */
     public abstract void updateRole(Role role) throws Exception;
+    
+    /**
+     * 根据角色id得到用户id列表
+     * @param roleId
+     * @return
+     * @throws Exception
+     */
+    public List<String> getUserIdsByRoleId(String roleId) throws Exception;
+    
+    /**
+     * 根据roleId删除关系
+     * @param roleId
+     * @throws Exception
+     */
+    public void deleteUserIdsByRoleId(String roleId) throws Exception;
+    
+    /**
+     * 批量维护角色和用户的关系
+     * @param roleId
+     * @param userIds
+     * @throws Exception
+     */
+    public void updateRoleToUserRel(String roleId,String[] userIds) throws Exception;
 }

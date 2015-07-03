@@ -88,7 +88,7 @@ public class UserController extends ModelView{
 	 */
 	@RequestMapping("/list")
     public ModelAndView userList(HttpServletRequest request,HttpServletResponse response){
-    	return createLayoutView("user/userList", request, response);
+    	return createLayoutView("auth/user/userList", request, response);
     }
 	
 	/**
@@ -101,7 +101,7 @@ public class UserController extends ModelView{
 	 */
 	@RequestMapping("/addUserView")
 	public ModelAndView addUserView(HttpServletRequest request,HttpServletResponse response) throws Exception{
-       return createSingleView("user/addUser", request, response);
+       return createSingleView("auth/user/addUser", request, response);
 	}
 	
 	/**
@@ -114,6 +114,6 @@ public class UserController extends ModelView{
 	 */
 	@RequestMapping("/updateUserView")
 	public ModelAndView updateUserView(HttpServletRequest request,HttpServletResponse response) throws Exception{
-       return createSingleView("user/updateUser", request, response);
+       return createSingleView("auth/user/updateUser", request, response);
 	}
 }
