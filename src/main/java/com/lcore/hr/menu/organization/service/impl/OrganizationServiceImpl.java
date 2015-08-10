@@ -39,20 +39,20 @@ public class OrganizationServiceImpl extends BaseServiceImpl implements
 	@Override
 	public void addOu(Organization org) throws Exception {
 		org.setStartTime(new Date());
-		this.saveObj(org);
+		this.save(org);
 	}
 
 	@Override
 	public void deleteOu(List<String> ids) throws Exception {
 		for (String id : ids) {
 			if (id != null && !"".equals(id.trim()))
-				this.deleteObj(Organization.class.getName(), id);
+				this.delete(Organization.class.getName(), id);
 		}
 	}
 
 	@Override
 	public void updateOu(Organization org) throws Exception {
-		this.updateObj(org);
+		this.update(org);
 	}
 
 }

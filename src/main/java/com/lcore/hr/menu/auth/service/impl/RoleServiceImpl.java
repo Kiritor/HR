@@ -33,20 +33,20 @@ public class RoleServiceImpl extends BaseServiceImpl implements RoleService{
 
 	@Override
 	public void addRole(Role role) throws Exception {
-		this.saveObj(role);
+		this.save(role);
 	}
 
 	@Override
 	public void deleteRole(List<String> ids) throws Exception {
 		for (String id : ids) {
 			if (id != null && !"".equals(id.trim()))
-				this.deleteObj(Role.class.getName(), id);
+				this.delete(Role.class.getName(), id);
 		}
 	}
 
 	@Override
 	public void updateRole(Role role) throws Exception {
-		this.updateObj(role);
+		this.update(role);
 	}
 
 	@Override
@@ -75,7 +75,7 @@ public class RoleServiceImpl extends BaseServiceImpl implements RoleService{
 			RoleToUserRel tmp = new RoleToUserRel();
 			tmp.setRoleId(roleId);
 			tmp.setUserId(str);
-			this.saveObj(tmp);
+			this.save(tmp);
 		}
 		
 	}
@@ -84,7 +84,7 @@ public class RoleServiceImpl extends BaseServiceImpl implements RoleService{
 	public void deleteUserIdsByRoleId(String roleId) throws Exception {
 		List<Root> roots = this.getObjListByCondition(RoleToUserRel.class.getSimpleName(), " obj.roleId ='"+roleId+"'");
 		for(Root root:roots){
-			this.deleteObj(RoleToUserRel.class.getName(), root.getId());
+			this.delete(RoleToUserRel.class.getName(), root.getId());
 		}
 	}
 

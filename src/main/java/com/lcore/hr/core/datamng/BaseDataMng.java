@@ -2,6 +2,7 @@ package com.lcore.hr.core.datamng;
 
 
 import java.util.List;
+import java.util.Map;
 
 import com.lcore.hr.core.entity.Root;
 /**
@@ -126,4 +127,7 @@ public interface BaseDataMng {
      * @return
      */
     public abstract long getCountByCondition(String className,String condition);
+    
+    public List<Map<String,Object>> querySql(String sql,List<Object> param);
+    
 }

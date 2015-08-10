@@ -1,6 +1,7 @@
 package com.lcore.hr.menu.base.service.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -18,7 +19,7 @@ public class BaseServiceImpl implements BaseService{
 	@Resource
 	private BaseDataMng baseDataMng;
 	@Override
-	public String saveObj(Root root) throws Exception {
+	public String save(Root root) throws Exception {
 		return baseDataMng.saveObj(root);
 	}
 	@Override
@@ -26,23 +27,23 @@ public class BaseServiceImpl implements BaseService{
 		baseDataMng.saveOrUpdate(root);
 	}
 	@Override
-	public void updateObj(Root root) throws Exception {
+	public void update(Root root) throws Exception {
 		baseDataMng.updateObj(root);
 	}
 	@Override
-	public Root getObj(String className, String id) {
+	public Root getObjById(String className, String id) {
 		return baseDataMng.getObj(className, id);
 	}
 	@Override
-	public Root getObj(Class<?> className, String id) {
+	public Root getObjById(Class<?> className, String id) {
 		return baseDataMng.getObj(className, id);
 	}
 	@Override
-	public void deleteObj(String className, String id) throws Exception {
+	public void delete(String className, String id) throws Exception {
 		baseDataMng.deleteObj(className, id);
 	}
 	@Override
-	public void deleteObj(Class<?> className, String id) throws Exception {
+	public void delete(Class<?> className, String id) throws Exception {
 		baseDataMng.deleteObj(className, id);
 	}
 	@Override
@@ -76,6 +77,39 @@ public class BaseServiceImpl implements BaseService{
 	public long getCountByCondition(String className, String condition) {
 		// TODO Auto-generated method stub
 		return baseDataMng.getCountByCondition(className, condition);
+	}
+	@Override
+	public List<Root> getObjListByHql(String hql, List<Object> objs) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<Root> getObjListByHql(String hql, List<Object> objs,
+			int firstRow, int pageSize) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<Map<String, Object>> getObjListBySql(String sql,
+			List<Object> objs) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<Map<String, Object>> getObjListBySql(String sql,
+			List<Object> objs, int firstRow, int pageSize) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void updateBySql(String sql, List<Object> objs) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void deleteBySql(String sql, List<Object> objs) throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

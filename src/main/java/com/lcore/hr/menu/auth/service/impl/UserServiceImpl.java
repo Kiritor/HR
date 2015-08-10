@@ -24,13 +24,13 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
 		}
 		if (null != sort && !"".equals(sort))
 			condition += " order by " + " obj." + sort + "" + "  " + order;
-		return this.getPagedObjListWithCondition(User.class.getSimpleName(),
+		return this.getPagedObjListWithCondition(User.class.getName(),
 				condition, offset, limit);
 	}
 
 	@Override
 	public void addUser(User user) throws Exception {
-		this.saveObj(user);
+		this.save(user);
 
 	}
 
@@ -38,13 +38,13 @@ public class UserServiceImpl extends BaseServiceImpl implements UserService {
 	public void deleteUser(List<String> ids) throws Exception {
 		for (String id : ids) {
 			if (id != null && !"".equals(id.trim()))
-				this.deleteObj(User.class.getName(), id);
+				this.delete(User.class.getName(), id);
 		}
 	}
 
 	@Override
 	public void updateUser(User user) throws Exception {
-		this.updateObj(user);
+		this.update(user);
 	}
 
 }

@@ -2,6 +2,7 @@ package com.lcore.hr.core.datamng.impl;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -122,5 +123,17 @@ public class BaseDataMngImpl implements BaseDataMng {
 	
 	public long getCountByCondition(String className,String condition){
 		return getObjListByCondition(className, condition).size();
+	}
+
+	@Override
+	public List<Map<String, Object>> querySql(String sql, List<Object> param) {
+		Session session = getSession();
+		Query hqlQuery = session.createQuery(sql);
+		if(param!=null){
+			for(int i=0;i<param.size();i++){
+				hqlQuery.setParameter(i, param.get(i));
+			}
+		}
+		return hqlQuery.list();
 	}
 }
