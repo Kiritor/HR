@@ -14,7 +14,7 @@
 				<version>2.0-beta-1</version>
 				<configuration>
 					<path>/hr</path>
-					<port>8080</port>
+					<port>9999</port>
 					<contextReloadable>false</contextReloadable>
 				</configuration>
 			</plugin>
