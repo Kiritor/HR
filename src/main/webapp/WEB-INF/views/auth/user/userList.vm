@@ -1,6 +1,8 @@
 <ol class="breadcrumb" style="margin-bottom:2px;">
     <li><a href="#">首页</a>
     </li>
+    <li><a href="#">权限管理</a>
+    </li>
     <li><a href="#">用户管理</a>
     </li>
     
@@ -28,7 +30,7 @@
         <i class="glyphicon glyphicon-remove-circle"></i>
     </button>
 </div>
-<table id="userList" data-toggle="table" data-url="${basePath}/auth/user/getUserList?search" data-sort-name="userName" data-sort-order="desc" data-show-header="true" data-show-refresh="true" data-show-columns="true" data-pagination="true" data-side-pagination="server" data-page-list="[10,20]" data-height="520" data-show-export="true" data-toolbar="#toolbar" data-show-paginationSwitch="true" data-pagination-detail-h-align="left" data-pagination-h-align="right" data-click-to-select="true">
+<table id="userList" data-toggle="table" data-url="${basePath}/auth/user/getUserList?search" data-sort-name="userName" data-sort-order="desc" data-show-header="true" data-show-refresh="true" data-show-columns="false" data-pagination="true" data-side-pagination="server" data-page-list="[10,20]" data-height="520" data-show-export="true" data-toolbar="#toolbar" data-show-paginationSwitch="true" data-pagination-detail-h-align="left" data-pagination-h-align="right" data-click-to-select="true">
     <thead>
         <tr>
             <th data-field="state" data-checkbox="true"></th>
