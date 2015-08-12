@@ -31,8 +31,7 @@
     <link href="${basePath}/static/jcheckbox/css/jquery-labelauty.css" rel="stylesheet">
     <script src="${basePath}/static/js/bt-validate.js"></script>
     <script src="${basePath}/static/js/md5.min.js"></script>
-    <link href="${basePath}/static/z-tree/css/metro.css" rel="stylesheet">
-    <script src="${basePath}/static/z-tree/jquery.ztree.all-3.5.min.js"></script>
+    <script src="${basePath}/static/js/json.js"></script>
 </head>
       #parse("${header_path}")
       <div style="position:absolute">
@@ -43,15 +42,6 @@
             #parse("${content_path}")
       </div>
        <div class="footer">版权所有:LCore 2015</div>
-       <script>
-        $("html").niceScroll({  
-			cursorcolor:"#eee",  
-			cursoropacitymax:1,  
-			touchbehavior:false,  
-			cursorwidth:"6px",  
-			cursorborder:"5",  
-			cursorborderradius:"5px"  
-        }); 
-    </script>
+      
 </body>
 </html>
