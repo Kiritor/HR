@@ -192,7 +192,7 @@ public class RoleController extends ModelView {
 	 * @param response
 	 * @return
 	 */
-	@RequestMapping("/list")
+	@RequestMapping("/listView")
 	public ModelAndView roleList(HttpServletRequest request,
 			HttpServletResponse response) {
 		return createLayoutView("auth/role/roleList", request, response);

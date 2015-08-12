@@ -86,7 +86,7 @@ public class UserController extends ModelView{
 	 * @param response
 	 * @return
 	 */
-	@RequestMapping("/list")
+	@RequestMapping("/listView")
     public ModelAndView userList(HttpServletRequest request,HttpServletResponse response){
     	return createLayoutView("auth/user/userList", request, response);
     }
