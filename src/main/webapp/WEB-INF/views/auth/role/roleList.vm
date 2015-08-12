@@ -1,7 +1,9 @@
 <ol class="breadcrumb" style="margin-bottom:2px;">
     <li><a href="#">首页</a>
     </li>
-    <li><a href="#">用户管理</a>
+    <li><a href="#">权限管理</a>
+    </li>
+    <li><a href="#">角色管理</a>
     </li>
     
 
