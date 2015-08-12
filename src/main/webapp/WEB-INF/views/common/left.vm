@@ -12,7 +12,7 @@
         </dd>
         <dd><a href="${basePath}/auth/role/roleAllocationView">角色分配</a>
         </dd>
-        <dd><a href="#">模块管理</a>
+        <dd><a href="${basePath}/auth/module/listView">模块管理</a>
         </dd>
     </dl>
     <dl class="system_log">
