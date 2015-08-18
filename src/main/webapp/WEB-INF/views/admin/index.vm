@@ -12,8 +12,12 @@
 	    jQuery
 	  </li>
 	  <li class="list-group-item">
-	    <span class="badge">前端框架</span>
+	    <span class="badge">前端框架(偏界面展现)</span>
 	    Bootstrap
+	  </li>
+	  <li class="list-group-item">
+	    <span class="badge">前端框架(偏数据展现)</span>
+	    EasyUI
 	  </li>
 	  <li class="list-group-item">
 	    <span class="badge">表格插件扩展</span>

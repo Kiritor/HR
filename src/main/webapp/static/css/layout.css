@@ -34,7 +34,7 @@ a {
 	width: 160px;
     height: 100% !important;
     overflow: visible !important;
-    position: fixed;
+    position: absolute;
     width: 160px;
     border: solid 1px #ddd;
 	border-top-width: 0px;

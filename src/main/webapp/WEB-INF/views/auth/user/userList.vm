@@ -101,7 +101,6 @@
 				});
             }
         });
-        
         //删除用户
         $("#delete").on("click", function() {
             var datas = $("#userList").bootstrapTable("getSelections");
