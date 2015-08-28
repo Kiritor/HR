@@ -32,7 +32,6 @@ a {
 .leftsidebar_box {
 	font-family: '微软雅黑';
 	width: 160px;
-    height: 100% !important;
     overflow: visible !important;
     position: absolute;
     width: 160px;

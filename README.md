@@ -33,6 +33,18 @@
 
 # 项目进度
 
-&nbsp;&nbsp;&nbsp;&nbsp;1. 登录模块:密码密文存储、设置了拦截器(不登录返回登录界面)、登录、退出系统.
+##登录模块
+&nbsp;&nbsp;&nbsp;&nbsp;密码密文存储、设置了拦截器(不登录返回登录界面)、登录、退出系统.
 
 <center>![登录界面](http://img.my.csdn.net/uploads/201506/11/1434011044_4098.png)</center>
+
+##权限管理
+&nbsp;&nbsp;&nbsp;&nbsp;主要包含角色、用户基础信息的管理(CRUD)、用户角色的分配、模块的管理(CRUD),模块授权.
+
+###角色管理
+&nbsp;&nbsp;&nbsp;&nbsp;角色的增、删、查、改、模糊搜索功能.
+<center>![角色管理](http://img.my.csdn.net/uploads/201508/28/1440726632_2964.png)</center>
+
+###用户管理
+&nbsp;&nbsp;&nbsp;&nbsp;用户的增、删、查、改、模糊搜索功能(密码的密文保存MD5加密).
+<center>![用户管理](http://img.my.csdn.net/uploads/201508/28/1440726808_2619.png)</center>
