@@ -10,9 +10,7 @@
 		http://www.springframework.org/schema/context/spring-context-3.1.xsd
 		http://www.springframework.org/schema/tx 
 		http://www.springframework.org/schema/tx/spring-tx-3.1.xsd" default-autowire="byName">
-
-
-      
+		
     <bean id="springContextHelper" class="com.lcore.hr.core.utils.SpringFactory">
     </bean>  
 	<context:property-placeholder location="classpath:jdbc.properties" />
@@ -58,4 +56,13 @@
 	</bean>
 	<!-- 配置注解性事务 -->
     <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
+    
+    <!-- 国际化配置 -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<!-- 国际化信息资源文件所在的目录 -->
+		<property name="basename" value="i18n.messages" />
+		<!-- 找不到对应的代码信息,就用这个代码作为标识 -->
+		<property name="useCodeAsDefaultMessage" value="true"/>
+	</bean>
 </beans>

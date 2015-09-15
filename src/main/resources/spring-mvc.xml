@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
@@ -40,9 +39,20 @@
 	</mvc:annotation-driven>
 	<!-- 静态资源(js/image)的访问 -->
 	<mvc:resources mapping="/static/**" location="/static/" />
+	<!-- 国际化配置 -->
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+		<!-- 设置cookieName名称，可以根据名称通过js来修改设置，默认的名称为 类名+.LOCALE如上图 -->
+		<property name="cookieName" value="lang" />
+		<!-- 设置最大有效时间，如果是-1，则不存储，浏览器关闭后即失效，默认为Integer.MAX_INT -->
+		<property name="cookieMaxAge" value="100000" />
+		<!-- 设置cookie可见的地址，默认是“/”即对网站所有地址都是可见的，如果设为其它地址，则只有该地址或其后的地址才可见 -->
+		<property name="cookiePath" value="/" />
+	</bean>
 	<mvc:interceptors>
+		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
 		<mvc:interceptor>
-		    <mvc:mapping path="/index" />
+			<mvc:mapping path="/index" />
 			<mvc:mapping path="/ou/*" />
 			<mvc:mapping path="/auth/*/*" />
 			<bean class="com.lcore.hr.interceptor.SecurityInterceptor" />
