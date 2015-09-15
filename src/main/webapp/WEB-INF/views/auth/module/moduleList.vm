@@ -31,6 +31,7 @@ data-toolbar="#toolbar">
         <tr>
             <th data-field="state" data-checkbox="true"></th>
             <th data-field="id" data-visible="false">id</th>
+            <th data-field="parentId" data-visible="false">parentId</th>
             <th data-field="moduleName" data-sortable="true" data-editable="false">模块名称</th>
             <th data-field="name" data-sortable="false">名称(国际化)</th>
             <th data-field="indexNum" data-sortable="false">序号</th>

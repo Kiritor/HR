@@ -11,18 +11,15 @@
         </span>
         <span class="dropdown">
              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Message 
+                #springMessage("header.message") 
                 <b class="caret"></b>
              </a>
-			  <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
-				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">English</a></li>
-				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Chniese</a></li>
-			  </ul>
+			 
 			
        </span>
        <span class="dropdown">
              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                To-List 
+                #springMessage("header.to-list")
                 <b class="caret"></b>
              </a>
 			  <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
@@ -35,12 +32,12 @@
     <div style="margin-right:40px;float:right;line-height:50px;">
         <span class="dropdown">
              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Language
+                #springMessage("header.language")
                 <b class="caret"></b>
              </a>
-			  <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
-				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">English</a></li>
-				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Chniese</a></li>
+			   <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+				<li role="presentation"><a role="menuitem" tabindex="-1" onclick="changeLang('en')">#springMessage("header.en")</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" onclick="changeLang('zh')">#springMessage("header.zh_CH")</a></li>
 			  </ul>
 			
        </span>
@@ -64,3 +61,10 @@
        </span>
     </div>
 </nav>
+<script>
+    function changeLang(lang){
+        $.post("${basePath}/lang?langType="+lang,function(data,status){
+	        location.reload();
+	    });
+    }
+</script>
