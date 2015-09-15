@@ -51,5 +51,10 @@ public class ModuleServiceImpl extends BaseServiceImpl implements ModuleService{
 				this.delete(Module.class.getName(), id);
 		}
 	}
+
+	@Override
+	public void updateModule(Module module) throws Exception {
+		this.update(module);
+	}
  
 }

@@ -9,4 +9,5 @@ public interface ModuleService {
 	public abstract void addModule(Module module) throws Exception;
 	public abstract List<Map<String,Object>> getModuleList(int offset,int limit,String sort,String order) throws Exception;
 	public abstract void deleteModule(List<String> ids) throws Exception;
+	public abstract void updateModule(Module module) throws Exception;
 }

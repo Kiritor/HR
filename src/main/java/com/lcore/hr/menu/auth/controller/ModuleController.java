@@ -70,8 +70,9 @@ public class ModuleController extends ModelView {
 	@RequestMapping("/updateModule")
 	@ResponseBody
 	public String updateModule(HttpServletRequest request,
-			HttpServletResponse response, Module module) {
-		return null;
+			HttpServletResponse response, Module module) throws Exception {
+		moduleService.updateModule(module);
+		return "success";
 	}
 
 	@RequestMapping("/listView")
