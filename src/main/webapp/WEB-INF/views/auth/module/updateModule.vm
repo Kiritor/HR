@@ -1,0 +1,101 @@
+<style>
+    .utable {
+        border: 0px;
+    }
+    .utable tr {
+        border: 0px;
+    }
+    .utable td {
+        text-align: right;
+        padding: 5px;
+        border: 0px;
+    }
+</style>
+<div class="modal-dialog" style="display: inline-block; width: auto;">
+    <div class="modal-content">
+        <div class="modal-header text-left">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="updateModuleModalLabel">更新模块</h4>
+        </div>
+        <div class="modal-body">
+            <table class="utable">
+                <tr style="border: 0px;">
+                    <td>
+                        <label for="updateModuleName">模块名</label>
+                        <input type="text" id="updateModuleName">
+                    </td>
+                    <td>
+                        <label for="updateName">名称(国际化)</label>
+                        <input type="text" id="updateName">
+                    </td>
+                    <td>
+                        <label for="updateModuleParent">父模块</label>
+                        <input type="text" id="updateModuleParent">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="updateModuleTarget">Target</label>
+                        <input type="text" id="updateModuleTarget">
+                    </td>
+                    <td>
+                        <label for="updateIndexNum">序号</label>
+                        <input type="text" id="updateIndexNum">
+                    </td>
+                    <td>
+                    
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+            <button type="submit" class="btn btn-success" id="updateModule">添加</button>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    $(function() {
+	    var data = $("#moduleList").bootstrapTable("getSelections")[0];
+	    $("#updateModuleName").val(data.moduleName);
+	    $("#updateName").val(data.name);
+	    $("#updateModuleTarget").val(data.target);
+	    $("#updateIndexNum").val(data.indexNum);
+	    $("#updateModuleParent").combobox({
+		        url:'${basePath}/auth/module/getModuleListDropDown',
+		        valueField: 'id',
+		        textField: 'moduleName',
+		        panelMaxHeight: 360,
+		        panelHeight: 'auto',
+		        height: 30,
+		        width: 155,
+		        disabled:true,
+		        editable:false,
+		        onLoadSuccess:function(){
+		            $(this).combobox("setValue",data.parentId);
+		        }
+	    });
+        $("#updateModule").on("click", function() {
+            var obj = new Object();
+            obj.moduleName = $("#updateModuleName").val();
+            obj.name = $("#updateName").val();
+            obj.target = $("#updateModuleTarget").val();
+            obj.parentId = $("#updateModuleParent").combobox("getValue");
+            obj.indexNum = $("#updateIndexNum").val();
+            var data = $("#moduleList").bootstrapTable("getSelections")[0];
+            obj.id = data.id;
+            $.ajax({
+                url: '${basePath}/auth/module/updateModule',
+                data: obj,
+                method: 'post',
+                dataType: 'json',
+                complete: function(jqXHR, textStatus) {
+                    $("#updateModuleModal").modal("hide");
+                }
+            });
+        });
+    });
+</script>

@@ -43,9 +43,9 @@
 	<bean id="localeResolver"
 		class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
 		<!-- 设置cookieName名称，可以根据名称通过js来修改设置，默认的名称为 类名+.LOCALE如上图 -->
-		<property name="cookieName" value="lang" />
+<!-- 		<property name="cookieName" value="lang" /> -->
 		<!-- 设置最大有效时间，如果是-1，则不存储，浏览器关闭后即失效，默认为Integer.MAX_INT -->
-		<property name="cookieMaxAge" value="100000" />
+<!-- 		<property name="cookieMaxAge" value="100000" /> -->
 		<!-- 设置cookie可见的地址，默认是“/”即对网站所有地址都是可见的，如果设为其它地址，则只有该地址或其后的地址才可见 -->
 		<property name="cookiePath" value="/" />
 	</bean>
