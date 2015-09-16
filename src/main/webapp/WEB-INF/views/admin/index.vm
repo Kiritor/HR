@@ -1,7 +1,7 @@
 <ol class="breadcrumb" style="margin-bottom:2px;">
-    <li><a href="#">首页概览</a>
+    <li><a href="#">#springMessage("home")</a>
     </li>
-    <li><a href="#">框架技术介绍</a>
+    <li><a href="#">#springMessage("home.framework")</a>
     </li>
 </ol>
 <div style="margin-left:20px;margin-right:10px;">

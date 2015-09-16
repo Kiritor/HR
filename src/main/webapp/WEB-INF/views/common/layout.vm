@@ -45,7 +45,18 @@
       </div>
        <div class="footer">版权所有:LCore 2015</div>
       <script>
-         $.fn.editable.defaults.mode = 'inline';
+          $(function(){
+                 $.fn.editable.defaults.mode = 'inline';
+		         $("html").niceScroll({
+		            cursorcolor: "#777777",
+		            cursoropacitymax: 1,
+		            touchbehavior: false,
+		            cursorwidth: "6px",
+		            cursorborder: "5",
+		            cursorborderradius: "4px",
+		            autohidemode: true
+		         });
+          });
       </script>
 </body>
 </html>
