@@ -86,3 +86,15 @@ input[type=text]{
     padding: 6px 12px;
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
 }
+
+
+/**
+    Color
+*/
+
+.green {
+	color:#72CB6F;
+}
+.blue {
+	color:#42b4f0;
+}

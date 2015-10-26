@@ -39,7 +39,7 @@ function formatDatebox(value) {
 
 function formatGender(value){
 	if(value=="male")
-		return "男";
+		return "<i class='fa fa-male blue'></i>";
 	else
-		return "女";
+		return "<i class='fa fa-female green'></i>";
 }

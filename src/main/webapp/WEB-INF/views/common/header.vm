@@ -46,7 +46,6 @@
        </span>
         <span>
           <i class="icon-bell fa-fw"></i>
-          <i class="badge badge-sm up bg-danger pull-right-xs" style="background-color:red;">2</i>
        </span>
         <span class="dropdown">
              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
