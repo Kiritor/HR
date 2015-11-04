@@ -50,7 +50,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
-            <button type="submit" class="btn btn-success" id="addModule">添加</button>
+            <button type="submit" class="btn btn-success" id="addModule">确定</button>
         </div>
     </div>
 
