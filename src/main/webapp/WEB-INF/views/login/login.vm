@@ -46,7 +46,7 @@
 		        <div class="form-group">
 		          <div class="col-md-12">
 		          	<div class="control-wrapper">
-		          		<input type="submit" value="登录" class="btn btn-info" onclick="md5_password()">
+		          		<input type="submit" value="登录" class="btn btn-info" style="border-radius:4px;" onclick="md5_password()">
 		          		<a href="forgot-password.html" class="text-right pull-right">#springMessage("login.forgetPassword")</a>
 		          	</div>
 		          </div>
