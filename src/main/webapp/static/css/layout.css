@@ -22,6 +22,7 @@ img {
 
 dl, dt, dd {
 	display: block;
+	font-weight:normal;
 	margin: 0;
 }
 
@@ -55,17 +56,21 @@ a {
 .leftsidebar_box dd {
 	background-color: #fff;
 	padding-left: 40px;
-	margin-top: 5px;
+	margin-top: 2px;
 }
 
 .leftsidebar_box dd:hover {
-	background-color: #97D2A6;
+	background-color: #42b4f0;
 }
 
 .leftsidebar_box dd a {
 	color: #000;
-	line-height: 20px;
+	line-height: 30px;
 }
+.leftsidebar_box dd a:hover {
+	color:#fff;
+}
+
 
 .leftsidebar_box dt img {
 	position: absolute;

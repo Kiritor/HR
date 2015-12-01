@@ -99,7 +99,7 @@
                 "background-color": "#fff"
             })
             $(this).css({
-                "background-color": "#97D2A6"
+                "background-color": "#42b4f0"
             });
             $(this).parent().find('dd').removeClass("menu_chioce");
             $(".leftsidebar_box dt img").attr("src", "${basePath}/static/img/left/select_xl01.png");
