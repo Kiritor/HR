@@ -49,15 +49,15 @@
 		<!-- 设置cookie可见的地址，默认是“/”即对网站所有地址都是可见的，如果设为其它地址，则只有该地址或其后的地址才可见 -->
 		<property name="cookiePath" value="/" />
 	</bean>
-	<mvc:interceptors>
-		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
-		<mvc:interceptor>
-			<mvc:mapping path="/index" />
-			<mvc:mapping path="/ou/*" />
-			<mvc:mapping path="/auth/*/*" />
-			<bean class="com.lcore.hr.interceptor.SecurityInterceptor" />
-		</mvc:interceptor>
-	</mvc:interceptors>
+<!-- 	<mvc:interceptors> -->
+<!-- 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" /> -->
+<!-- 		<mvc:interceptor> -->
+<!-- 			<mvc:mapping path="/index" /> -->
+<!-- 			<mvc:mapping path="/ou/*" /> -->
+<!-- 			<mvc:mapping path="/auth/*/*" /> -->
+<!-- 			<bean class="com.lcore.hr.interceptor.SecurityInterceptor" /> -->
+<!-- 		</mvc:interceptor> -->
+<!-- 	</mvc:interceptors> -->
 	<!-- 定义视图解析器 -->
 	<!-- 配置velocity引擎处理请求 -->
 	<bean id="velocityConfigurer"

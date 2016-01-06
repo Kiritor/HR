@@ -39,6 +39,7 @@ a {
     width: 160px;
     border: solid 1px #ddd;
 	border-top-width: 0px;
+	border-bottom-width:0px;
 }
 
 .leftsidebar_box dt {

@@ -35,7 +35,7 @@
 		        <div class="form-group">
 		          <div class="col-md-12">
 					<div class="checkbox control-wrapper checkbox-info checkbox-circle " style="margin-left:30px;">
-                        <input id="checkbox2" class="styled" type="checkbox" checked>
+                        <input id="checkbox2" name="isRemeberMe" class="styled" type="checkbox" checked value="true">
                         <label for="checkbox2">
                              #springMessage("login.remember")
                         </label>
@@ -70,7 +70,7 @@
 	<script>
 	    function md5_password(){
 		   var password = $("#password").val();
-		   $("#password").val(md5(password));
+		   //$("#password").val(md5(password));
 		}
 	</script>
 </body>

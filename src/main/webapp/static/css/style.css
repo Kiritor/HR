@@ -124,3 +124,6 @@ input[type=text]{
 .portalPanel:hover{
 	background-color:#f7f7f7;
 }
+.page-list {
+	font-size:12px;
+}

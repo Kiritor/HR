@@ -30,7 +30,7 @@
         <i class="glyphicon glyphicon-remove-circle"></i>
     </button>
 </div>
-<table id="userList" data-toggle="table" data-url="${basePath}/auth/user/getUserList?search" data-sort-name="userName" data-sort-order="desc" data-show-header="true" data-show-refresh="true" data-show-columns="false" data-pagination="true" data-side-pagination="server" data-page-list="[10,20]" data-height="520" data-show-export="true" data-toolbar="#toolbar" data-show-paginationSwitch="true" data-pagination-detail-h-align="left" data-pagination-h-align="right" data-click-to-select="true">
+<table id="userList" data-cache="false" data-toggle="table" data-url="${basePath}/auth/user/getUserList?search" data-sort-name="userName" data-sort-order="desc" data-show-header="true" data-show-refresh="true" data-show-columns="false" data-pagination="true" data-side-pagination="server" data-page-size="20" data-page-list="[10,20]" data-height="520" data-show-export="true" data-toolbar="#toolbar" data-show-paginationSwitch="true" data-pagination-detail-h-align="left" data-pagination-h-align="right" data-click-to-select="true">
     <thead>
         <tr>
             <th data-field="state" data-checkbox="true"></th>
@@ -72,6 +72,7 @@
         $("#userList").on('sort.bs.table', function(name, order) {
             $(this).bootstrapTable("getOptions").pageNumber = 1; //默认排序从第一页开始
         });
+
 
         //添加用户
         $("#add").on("click",function(){
@@ -128,5 +129,8 @@
                 }
             });
         });
-    })
+    });
+    $("#userList").bootstrapTable({
+       height:$(window).height()-140
+    });
 </script>

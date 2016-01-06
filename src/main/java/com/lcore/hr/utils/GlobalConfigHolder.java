@@ -10,8 +10,17 @@ public class GlobalConfigHolder {
 
     private static Map<String, String> propertiesMap = new HashMap<String, String>();
 
+    private static Env env = null;
 
-    public static void init() throws IOException {
+    public static Env getEnv() {
+		return env;
+	}
+
+	public static void setEnv(Env env) {
+		GlobalConfigHolder.env = env;
+	}
+
+	public static void init() throws IOException {
         InputStream inputStream = GlobalConfigHolder.class.getClassLoader().getResourceAsStream("sys.properties");
         Properties p = new Properties();
         p.load(inputStream);
