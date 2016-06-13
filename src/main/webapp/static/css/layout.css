@@ -34,11 +34,10 @@ a {
 }
 /*left*/
 .leftsidebar_box {
-	font-family: '微软雅黑';
+	font-family: 'Micsoft YaHei';
 	width: 160px;
 	min-height:640px;
 	height:90%;
-    overflow: visible !important;
     position: absolute;
     width: 160px;
     border: solid 1px #eee;
