@@ -10,7 +10,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name = "role")
+@Table(name = "t_role")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Role extends Root {
 
