@@ -46,8 +46,12 @@ data-toolbar="#toolbar">
 </table>
 
 <script>
+
+    $("#moduleList").bootstrapTable({
+       height:$(window).height()-130
+    });
     $(function() {
-    
+        
         //搜索事件
         $("#search").on("click", function() {
             search();

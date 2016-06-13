@@ -76,8 +76,8 @@ input[type=text]{
 	background-color: #fff;
 	margin-right:5px;
     background-image: none;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid #ddd;
+    border-radius: 0;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
     color: #555;
     font-size: 14px;
@@ -97,4 +97,33 @@ input[type=text]{
 }
 .blue {
 	color:#42b4f0;
+}
+
+/**
+  panel
+*/
+
+.portal{
+	width:auto;
+	height:auto;
+}
+.portalPanel {
+	width:auto;
+	height:80px;
+	line-height:80px;
+	text-align:center;
+    box-shadow: 0px 1px 3px #ddd;
+    margin:6px 6px 6px 6px;
+    padding-left:20px;
+    padding-right:20px;
+    min-width:160px;
+    display:inline-block;
+    color:#555;
+    cursor:pointer;
+}
+.portalPanel:hover{
+	background-color:#f7f7f7;
+}
+.page-list {
+	font-size:12px;
 }

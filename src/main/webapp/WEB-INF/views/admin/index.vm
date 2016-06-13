@@ -5,53 +5,47 @@
     </li>
 </ol>
 <div style="margin-left:20px;margin-right:10px;">
+<div class="portal">
 <h3>前端</h3>
-<ul class="list-group">
-      <li class="list-group-item">
-	    <span class="badge">js库</span>
-	    jQuery
-	  </li>
-	  <li class="list-group-item">
-	    <span class="badge">前端框架(偏界面展现)</span>
-	    Bootstrap
-	  </li>
-	  <li class="list-group-item">
-	    <span class="badge">前端框架(偏数据展现)</span>
-	    EasyUI
-	  </li>
-	  <li class="list-group-item">
-	    <span class="badge">表格插件扩展</span>
-	    BootstrapTable
-	  </li>
-	  <li class="list-group-item">
-	    <span class="badge">界面模板引擎</span>
-	    Velocity
-	  </li>
-	   <li class="list-group-item">
-	             待续...
-	  </li>
-</ul>
+<div class="portalPanel">
+  <h3>jQuery</h3>
+</div>
+<div class="portalPanel">
+  <h3>Bootstrap</h3>
+</div>
+<div class="portalPanel">
+  <h3>EasyUI</h3>
+</div>
+<div class="portalPanel">
+  <h3>BootstrapTable</h3>
+</div>
+<div class="portalPanel">
+  <h3>Velocity</h3>
+</div>
+<div class="portalPanel">
+  <h3>插件</h3>
+</div>
+<div class="portalPanel">
+  <h3>...</h3>
+</div>
+</div>
+<div class="portal">
 <h3>后端</h3>
-<ul class="list-group">
-      <li class="list-group-item">
-	    <span class="badge">ORM框架</span>
-	    Hibernate
-	  </li>
-	  <li class="list-group-item">
-	    <span class="badge">轻量级的IOC(控制反转)、AOP(面向切面)的容器框架</span>
-	    Spring
-	  </li>
-	  <li class="list-group-item">
-	    <span class="badge">SpringFramework MVC框架</span>
-	    Spring MVC
-	  </li>
-	  <li class="list-group-item">
-	    <span class="badge">工作流引擎</span>
-	    Activiti
-	  </li>
-	  <li class="list-group-item">
-	             待续...
-	  </li>
-</ul>
+<div class="portalPanel">
+  <h3>Hibernate(ORM)</h3>
+</div>
+<div class="portalPanel">
+  <h3>Spring(IOC容器)</h3>
+</div>
+<div class="portalPanel">
+  <h3>Spring MVC(MVC框架)</h3>
+</div>
+<div class="portalPanel">
+  <h3>Activiti(工作流引擎)</h3>
+</div>
+<div class="portalPanel">
+  <h3>待续</h3>
+</div>
+</div>
 </div>
 

@@ -25,6 +25,7 @@ img {
 
 dl, dt, dd {
 	display: block;
+	font-weight:normal;
 	margin: 0;
 }
 
@@ -35,13 +36,14 @@ a {
 .leftsidebar_box {
 	font-family: '微软雅黑';
 	width: 160px;
-	height:auto;
 	min-height:640px;
+	height:90%;
     overflow: visible !important;
     position: absolute;
     width: 160px;
     border: solid 1px #eee;
 	border-top-width: 0px;
+	border-bottom-width:0px;
 }
 
 .leftsidebar_box dt {
@@ -59,17 +61,21 @@ a {
 .leftsidebar_box dd {
 	background-color: #fff;
 	padding-left: 40px;
-	margin-top: 5px;
+	margin-top: 2px;
 }
 
 .leftsidebar_box dd:hover {
-	background-color: #97D2A6;
+	background-color: #42b4f0;
 }
 
 .leftsidebar_box dd a {
 	color: #000;
-	line-height: 20px;
+	line-height: 30px;
 }
+.leftsidebar_box dd a:hover {
+	color:#fff;
+}
+
 
 .leftsidebar_box dt img {
 	position: absolute;

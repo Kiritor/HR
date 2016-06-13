@@ -9,7 +9,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-4">
-            <table id="roleList" data-toggle="table" data-single-select="true" data-url="${basePath}/auth/role/roleList?search" data-sort-name="name" data-sort-order="desc" data-show-header="true" data-height="300" data-click-to-select="true">
+           <table id="roleList" data-cache="false" data-toggle="table" data-url="${basePath}/auth/role/getRoleList?search" data-sort-name="name" data-sort-order="desc" data-show-header="true" data-pagination="true" data-side-pagination="server" data-page-list="[10,20]" data-height="test()" data-show-export="false" data-show-paginationSwitch="true" data-pagination-detail-h-align="left" data-pagination-h-align="right" data-click-to-select="true" data-single-select="true">
                 <thead>
                     <tr>
                         <th data-field="state" data-checkbox="true"></th>
@@ -30,7 +30,7 @@
 
         </div>
         <div class="col-md-8">
-            <table id="userList" data-toggle="table" data-url="${basePath}/auth/role/getUserListByRoleId?search=" data-response-handler="responseHandler" data-sort-name="userName" data-sort-order="desc" data-show-header="true" data-pagination="true" data-side-pagination="server" data-page-list="[10,20]" data-height="500" data-show-paginationSwitch="true" data-pagination-detail-h-align="left" data-pagination-h-align="right" data-click-to-select="true">
+            <table id="userList" data-cache="false" data-toggle="table" data-url="${basePath}/auth/role/getUserListByRoleId?search=" data-response-handler="responseHandler" data-sort-name="userName" data-sort-order="desc" data-show-header="true" data-pagination="true" data-side-pagination="server" data-page-list="[10,20]" data-height="500" data-show-paginationSwitch="true" data-pagination-detail-h-align="left" data-pagination-h-align="right" data-click-to-select="true">
                 <thead>
                     <tr>
                         <th data-field="state" data-checkbox="true"></th>
@@ -64,7 +64,7 @@
                 }
             });
         });
-
+        
         $("#userList").bootstrapTable().on("load-success.bs.table", function(e, data) {
             var roleId = $("#roleList").bootstrapTable("getSelections");
             if (!roleId || roleId.length == 0) {
@@ -127,5 +127,12 @@
         });
         return res;
     }
+     $("#roleList").bootstrapTable({
+	       height:$(window).height()-240
+	 });
+     $("#userList").bootstrapTable({
+	       height:$(window).height()-160
+	 });
+    
    
 </script>

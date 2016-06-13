@@ -49,7 +49,7 @@
        </span>
         <span class="dropdown">
              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-			    $!{Env.user.getUserName()}&nbsp;
+			    $!{Env.getUser().getUserName()}&nbsp;
                 <img  src="${basePath}/static/img/a0.jpg" alt="..." class="img-circle">
                 <b class="caret"></b>
              </a>

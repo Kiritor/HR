@@ -8,6 +8,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.lcore.hr.utils.Env;
+import com.lcore.hr.utils.GlobalConfigHolder;
 
 /**
  * 
@@ -40,7 +41,7 @@ public class SecurityInterceptor implements HandlerInterceptor{
 		 //2、TODO:游客,登出
 		 //3、用户已经登录,放行
          Object object = httpSession.getAttribute("user");
-         if(object != null&&Env.instance().user!=null)
+         if(object != null&&GlobalConfigHolder.getEnv().user!=null)
          {
         	 return true;
          }

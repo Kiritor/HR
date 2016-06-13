@@ -27,9 +27,7 @@ public class ModelView {
 		ModelAndView view = new ModelAndView();
 		view.addObject("basePath",GlobalConfigHolder.getProperty("basePath"));
 		view.setViewName(fileName);
-		Env env = Env.instance();
-		env.user = (User)request.getSession().getAttribute("user");
-		view.addObject("Env",env);
+		view.addObject("Env",GlobalConfigHolder.getEnv());
 		return view;
 	}
 
@@ -53,9 +51,7 @@ public class ModelView {
 		view.addObject("content_path", fileName + ".vm");
 		String path = GlobalConfigHolder.getProperty("basePath");
 		view.addObject("basePath",GlobalConfigHolder.getProperty("basePath"));
-		Env env = Env.instance();
-		env.user = (User)request.getSession().getAttribute("user");
-		view.addObject("Env",env);
+		view.addObject("Env",GlobalConfigHolder.getEnv());
 		return view;
 	}
 

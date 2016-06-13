@@ -12,26 +12,10 @@ public class Env {
 		this.user = user;
 	}
 
-	public static Env getEnv() {
-		return env;
-	}
 
-	public static void setEnv(Env env) {
-		Env.env = env;
-	}
 
-	private static Env env = null;
+	public Env() {
 
-	private Env() {
-
-	}
-
-	public static Env instance() {
-		if (env == null) {
-			env = new Env();
-		}
-
-		return env;
 	}
 
 }

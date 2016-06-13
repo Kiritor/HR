@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.springframework.orm.hibernate3.HibernateTemplate;
@@ -14,6 +16,7 @@ import com.lcore.hr.core.datamng.BaseDataMng;
 import com.lcore.hr.core.entity.Root;
 import com.lcore.hr.core.utils.TemplateFactory;
 import com.lcore.hr.utils.Env;
+import com.lcore.hr.utils.GlobalConfigHolder;
 
 
 @Repository("baseDataMng")
@@ -37,8 +40,9 @@ public class BaseDataMngImpl implements BaseDataMng {
 		root.setCreateTime(new Date());    
 		root.setUpdateTime(new Date());
 		//压入创建人,更新人
-		root.setCreater(Env.instance().user.getUserName());
-		root.setUpdater(Env.instance().user.getUserName());
+		Env env = GlobalConfigHolder.getEnv();
+		root.setCreater(env.getUser().getUserName());
+		root.setUpdater(env.getUser().getUserName());
 		return (String) getHibernateTemplate().save(root);
 	}
 
@@ -50,7 +54,8 @@ public class BaseDataMngImpl implements BaseDataMng {
 		//压入更新时间
 		root.setUpdateTime(new Date());
 		//压入更新人
-		root.setUpdater(Env.instance().user.getUserName());
+		Env env = GlobalConfigHolder.getEnv();
+		root.setUpdater(env.getUser().getUserName());
         getHibernateTemplate().update(root);
 	}
 
