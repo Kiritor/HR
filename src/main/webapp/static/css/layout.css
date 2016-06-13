@@ -1,3 +1,6 @@
+.navbar {
+	/*background-color:#F5F5F5;*/
+}
 .navbar span {
 	display: -moz-inline-box; /* css注释：for ff2 */
 	display: inline-block;
@@ -32,11 +35,12 @@ a {
 .leftsidebar_box {
 	font-family: '微软雅黑';
 	width: 160px;
-	height:580px;
+	height:auto;
+	min-height:640px;
     overflow: visible !important;
     position: absolute;
     width: 160px;
-    border: solid 1px #ddd;
+    border: solid 1px #eee;
 	border-top-width: 0px;
 }
 
@@ -113,12 +117,13 @@ a {
    footer
 */
 .footer {
-	position: fixed;
+	position: relative;
 	left:0px;
 	bottom:0px;
 	width:100%;
 	font-family:'microsoft yahei';
 	height:40px;
 	line-height:40px;
+	background-color:#fefefe;
 	text-align:center;
 }

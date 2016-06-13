@@ -43,7 +43,7 @@
       <div style="margin-left:161px;margin-right:6px;font-family:'微软雅黑'">
             #parse("${content_path}")
       </div>
-       <div class="footer">版权所有:LCore 2015</div>
+      <div class="footer">版权所有:LCore 2015</div>
       <script>
           $(function(){
                  $.fn.editable.defaults.mode = 'inline';
