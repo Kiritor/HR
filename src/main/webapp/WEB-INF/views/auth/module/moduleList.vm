@@ -25,7 +25,7 @@
         <i class="glyphicon glyphicon-remove-circle"></i>
     </button>
 </div>
-<table id="moduleList" data-toggle="table" data-url="${basePath}/auth/module/getModuleList" data-show-header="true" data-show-refresh="true" data-show-columns="false" data-pagination="true" data-side-pagination="server" data-page-list="[10,20]" data-height="520" data-show-export="true"  data-show-paginationSwitch="true" data-pagination-detail-h-align="left" data-pagination-h-align="right" data-click-to-select="true"
+<table id="moduleList" data-toggle="table" data-url="${basePath}/auth/module/getModuleList" data-show-header="true" data-show-refresh="true" data-show-columns="false" data-pagination="true" data-side-pagination="server" data-height="520" data-show-export="true"  data-show-paginationSwitch="true" data-pagination-detail-h-align="left" data-pagination-h-align="right" data-click-to-select="true"
 data-toolbar="#toolbar">
     <thead>
         <tr>
@@ -52,23 +52,6 @@ data-toolbar="#toolbar">
     });
     $(function() {
         
-        //搜索事件
-        $("#search").on("click", function() {
-            search();
-        });
-        
-        function search() {
-            var $table = $("#moduleList");
-            $.post("${basePath}/auth/module/getModuleList", {
-                limit: 10,
-                offset: 0,
-                order: "desc",
-                sort: 'userName'
-            }, function(res) {
-                $table.bootstrapTable("getOptions").pageNumber = 1; //默认排序从第一页开始
-                $table.bootstrapTable('load', res);
-            });
-        }
         //排序事件
         $("#moduleList").on('sort.bs.table', function(name, order) {
             $(this).bootstrapTable("getOptions").pageNumber = 1; //默认排序从第一页开始

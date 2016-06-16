@@ -59,7 +59,7 @@
             var searchText = $("#searchBox").val();
             $.post("${basePath}/auth/user/getUserList", {
                 search: searchText,
-                limit: 10,
+                limit: 20,
                 offset: 0,
                 order: "desc",
                 sort: 'userName'

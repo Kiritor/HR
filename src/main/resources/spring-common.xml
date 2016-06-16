@@ -77,7 +77,7 @@
 		<property name="permissionsLookupEnabled" value="true"></property>
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="authenticationQuery"
-			value="SELECT password,id FROM user WHERE userName = ?"></property>
+			value="SELECT password,id FROM t_user WHERE userName = ?"></property>
 		<property name="userRolesQuery"
 			value="SELECT role_name from sec_user_role left join sec_role using(role_id) left join sec_user using(user_id) WHERE user_name = ?"></property>
 		<property name="permissionsQuery"

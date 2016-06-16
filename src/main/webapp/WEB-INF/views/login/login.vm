@@ -15,7 +15,7 @@
 	<div class="container" style="margin-top:80px;">
 		<div class="col-md-12">
 			<h1 class="margin-bottom-15">#springMessage("system.name")</h1>
-			<form class="form-horizontal templatemo-container templatemo-login-form-1 margin-bottom-30" role="form" method="post" action="${basePath}/login">				
+			<form id="loginForm" class="form-horizontal templatemo-container templatemo-login-form-1 margin-bottom-30" role="form">				
 		        <div class="form-group">
 		          <div class="col-xs-12">		            
 		            <div class="control-wrapper">
@@ -35,19 +35,18 @@
 		        <div class="form-group">
 		          <div class="col-md-12">
 					<div class="checkbox control-wrapper checkbox-info checkbox-circle " style="margin-left:30px;">
-                        <input id="checkbox2" name="isRemeberMe" class="styled" type="checkbox" checked value="true">
+                        <input id="isRemeberMe" name="isRemeberMe" class="styled" type="checkbox" checked value="true">
                         <label for="checkbox2">
                              #springMessage("login.remember")
                         </label>
                     </div>
-					
 		          </div>
 		        </div>
 		        <div class="form-group">
 		          <div class="col-md-12">
 		          	<div class="control-wrapper">
-		          		<input type="submit" value="登录" class="btn btn-info" style="border-radius:4px;" onclick="md5_password()">
-		          		<a href="forgot-password.html" class="text-right pull-right">#springMessage("login.forgetPassword")</a>
+		          		<input type="button" value="登录" class="btn btn-info" style="border-radius:4px;" id="login">
+		          		<a href="" id="message" style="color:red;" class="text-right pull-right"></a>
 		          	</div>
 		          </div>
 		        </div>
@@ -68,10 +67,51 @@
 		</div>
 	</div>
 	<script>
-	    function md5_password(){
-		   var password = $("#password").val();
-		   //$("#password").val(md5(password));
-		}
+	    function valadation(){
+	        if($("#userName").val()==""||$("#password").val()==""){
+	            return false;
+	        }
+	        return true;
+	    }
+        $(function(){
+		    $("#login").on("click",function(){
+		        if(valadation()){
+		             var data = new Object();
+		             data.userName=$("#userName").val();
+		             data.password=$("#password").val();
+		             data.isRemeberMe = false;
+		             if($("#isRemeberMe").get(0).checked)
+		                 data.isRemeberMe = true;
+		             $.ajax({
+				            url:"${basePath}/login",
+				            method:"post",
+				            data:data,
+				            success:function(data, textStatus, jqXHR) {
+				                if(data){
+				                   window.location.href = "${basePath}/loginSYS";
+				                }else{
+				                   $("#message").html("用户名、密码错误!");
+				                }
+				            },
+				            error:function(jqXHR, textStatus, errorThrown) {
+				            }
+				    });
+		        
+		        }else
+		           $("#message").html("用户名、密码不能为空!");
+		    
+		    });
+		    $("#username").keypress(function(event) {
+		    	if (event.which == 13) {
+		    		$("#login").click();
+		    	}
+		    });
+		    $("#password").keypress(function(event) {
+		    	if (event.which == 13) {
+		    		$("#login").click();
+		    	}
+		    });
+        });
 	</script>
 </body>
 </html>

@@ -13,6 +13,7 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.lcore.hr.core.entity.User;
@@ -26,11 +27,18 @@ public class LoginController extends ModelView{
 	@Resource
 	private BaseService baseService;
 	@RequestMapping("/login")
-	public ModelAndView login(HttpServletRequest request,HttpServletResponse response,
-			@RequestParam String userName,@RequestParam String password,Boolean isRemeberMe) throws Exception{
+	@ResponseBody
+	public Boolean login(HttpServletRequest request,HttpServletResponse response,
+			@RequestParam String userName,@RequestParam String password,Boolean isRemeberMe){
 		UsernamePasswordToken token = new UsernamePasswordToken(userName, password);  
 		Subject subject = SecurityUtils.getSubject(); 
-		subject.login(token);
+		try {
+			subject.login(token);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	
 		if(null!=isRemeberMe&&isRemeberMe)
 			 token.setRememberMe(true);  
 		if(subject.isAuthenticated()){
@@ -44,11 +52,9 @@ public class LoginController extends ModelView{
 			 env.setUser(user);
 			 session.setAttribute("env",env);
 			 GlobalConfigHolder.setEnv(env);
-			 ModelAndView view = createLayoutView("admin/index", request, response);
-			 return view;
+			 return true;
 		}else
-			return createSingleView("login/login", request, response);
-
+            return false;
 	}
 		
 	@RequestMapping("/logout")
@@ -58,6 +64,12 @@ public class LoginController extends ModelView{
 		Subject  subject = SecurityUtils.getSubject();
 		subject.logout();
 		return createSingleView("login/login", request, response);
+	}
+	
+	@RequestMapping("/loginSYS")
+	public ModelAndView loginSYS(HttpServletRequest request,HttpServletResponse response) throws Exception{
+		ModelAndView view = createLayoutView("admin/index", request, response);
+		return view;
 	}
 	
 	@RequestMapping("/loginUrl")

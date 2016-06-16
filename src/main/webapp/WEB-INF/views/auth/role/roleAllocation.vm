@@ -50,12 +50,12 @@
 <script>
     
     var $table = $('#userList');
-    var selections = [];
+    var selections = new Array();;
     $(function() {
 
         $("#roleList").bootstrapTable().on("click-row.bs.table", function(e, row, $element) {
             var options = $("#userList").bootstrapTable("getOptions");
-            selections = [];
+            selections = new Array();
             options.pageNumber = 1;
             options.url = "${basePath}/auth/role/getUserListByRoleId?search=&roleId=" + row.id;
             $("#userList").bootstrapTable("refresh", {
@@ -78,11 +78,10 @@
             }
 
         });
-        $("#userList").bootstrapTable().on("check.bs.table uncheck.bs.table check-all.bs.table uncheck-all.bs.table",function(){
+        $("#userList").bootstrapTable().on("check.bs.table check-all.bs.table",function(){
             selections = $.merge(selections,getIdSelections());
             selections.sort();
             selections = $.unique(selections);
-            console.info(selections);
         });
         
     });
@@ -110,6 +109,13 @@
                     autoclose: true,
                     timeout: 3000
                 });
+            $("#roleList").bootstrapTable("refresh"); 
+            //clear
+            selections = new Array();
+            var options = $("#userList").bootstrapTable("getOptions");
+            options.pageNumber = 1;
+            options.url = "${basePath}/auth/role/getUserListByRoleId?search=&roleId=";
+            $("#userList").bootstrapTable("refresh");
             }
         });
 
@@ -133,6 +139,4 @@
      $("#userList").bootstrapTable({
 	       height:$(window).height()-160
 	 });
-    
-   
 </script>

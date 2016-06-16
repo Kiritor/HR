@@ -34,7 +34,7 @@ a {
 }
 /*left*/
 .leftsidebar_box {
-	font-family: 'Micsoft YaHei';
+	font-family: '微软雅黑';
 	width: 160px;
 	min-height:640px;
 	height:90%;
@@ -127,8 +127,8 @@ a {
 	bottom:0px;
 	width:100%;
 	font-family:'microsoft yahei';
-	height:40px;
-	line-height:40px;
+	height:30px;
+	line-height:30px;
 	background-color:#fefefe;
 	text-align:center;
 }
